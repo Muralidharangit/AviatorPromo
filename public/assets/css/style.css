@@ -2334,12 +2334,20 @@ li.nav-item button {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
   color: #e4e4e4;
   font-size: 0.875rem;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   margin-right: 1rem;
-  height: 70px;
+  height: 44px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
+  align-items: center;
+  background: #14141d;
+  color: #fff;
+  border: 1px solid #2e2e36;
+  transition: 0.3s;
+  border-radius: 50%;
+  width: 44px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -2351,7 +2359,7 @@ li.nav-item button {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
 }
 
 .navbar
@@ -7232,3 +7240,6 @@ a.social-icon-box.p-2.rounded.d-flex.justify-content-center.align-items-center.t
     background: #1e2022;
 }
 
+.bg-card{
+background: #14141d;
+}
