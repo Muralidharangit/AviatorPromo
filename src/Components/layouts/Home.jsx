@@ -2276,75 +2276,232 @@ function Home() {
                             </Link>
                           </div>
 
-                          <div className="row px-0">
-                            <div className="col-lg-6 mb-3">
-                              <div className="bouns_sec">
-                                <div className="card bonus_card">
-                                  <div className="card-body p-0">
-                                    <div className="bonus_card_sec">
-                                      {/* Top section with text and image */}
-                                      <div className="bonus_sec_top p-4 py-2">
-                                        <div className="bonus_sec_content">
-                                          <span>Casino</span>
-                                          <span className="text-shadow">
-                                            <p>100% Crash Power Bonus</p>
-                                          </span>
-                                        </div>
-                                      </div>
-                                      {/* Bottom section with timer and buttons */}
-                                      <div className="bonusBlock_other__bottom p-2">
-                                        <div className="timer_block_container d-flex align-items-center">
-                                          {/* Action buttons */}
-                                          <div className="bonus_bottom_btn red_clr w-100">
-                                            <button className="btn btn-red w-100">
-                                              Get bonus
-                                            </button>
-                                            <button className="btn btn-outline-light w-100">
-                                              Details
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                          <div className="row">
+  <div className="col-lg-4">
+    <div className="bouns_sec mb-3"  >
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div className="bonus_card_sec"  style={{
+              background:
+                "rgb(9, 95, 205"
+            }}>
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>75% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="img-fluid rounded"
+                  src="https://upload.4rabet4.com/storage/239257/PNG_75-Crash-Power-Bonus-(1)-1-(1).png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-4">
+    <div className="bouns_sec mb-3 h-100">
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div
+            className="bonus_card_sec"
+            style={{
+              background:
+                "linear-gradient(238.08deg, rgb(242, 220, 20) 0%, rgb(207, 165, 16) 33%, rgb(151, 94, 9) 65%, rgb(74, 42, 4) 100%)"
+            }}
+          >
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>100% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="img-fluid rounded"
+                  src="https://upload.4rabet4.com/storage/235234/PNG-(6).png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                            <div className="col-lg-6">
-                              <div className="bouns_sec ">
-                                <div className="card bonus_card">
-                                  <div className="card-body p-0">
-                                    <div className="bonus_card_sec">
-                                      {/* Top section with text and image */}
-                                      <div className="bonus_sec_top p-4 py-2">
-                                        <div className="bonus_sec_content">
-                                          <span>Casino</span>
-                                          <span className="text-shadow">
-                                            <p>75% Crash Power Bonus</p>
-                                          </span>
-                                        </div>
-                                      </div>
-                                      {/* Bottom section with timer and buttons */}
-                                      <div className="bonusBlock_other__bottom p-2">
-                                        <div className="timer_block_container d-flex align-items-center">
-                                          {/* Action buttons */}
-                                          <div className="bonus_bottom_btn red_clr w-100">
-                                            <button className="btn btn-red w-100">
-                                              Get bonus
-                                            </button>
-                                            <button className="btn btn-outline-light w-100">
-                                              Details
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+  <div className="col-lg-4">
+    <div className="bouns_sec mb-3 h-100">
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div
+            className="bonus_card_sec"
+            style={{
+              background:
+                "linear-gradient(238.08deg, rgb(157, 71, 255) 0%, rgb(109, 35, 230) 33%, rgb(79, 21, 174) 65%, rgb(52, 8, 125) 100%)"
+            }}
+          >
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>100% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="w-75 rounded"
+                  src="https://upload.4rabet6.com/storage/263963/PNG_PlayTech---Lucky-Rush-2.png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
                         </div>
                       </div>
 

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import routes from "../../routes/route";
 import AuthContext from "../../../Auth/AuthContext";
 import { verifyToken } from "../../../API/authAPI";
@@ -139,6 +139,8 @@ const StickyHeader = ({ onToggleSidebar }) => {
       setLoading(false);
     }
   };
+
+  
 
   // const pop_up = ()=>
   // {
@@ -318,6 +320,31 @@ const StickyHeader = ({ onToggleSidebar }) => {
                     {/* Coin Box */}
                     {profile ? (
                       <div className="d-flex align-items-center px-2 py-1 rounded-pill">
+
+                         <li className="nav-item d-none d-lg-block full-screen-link">
+                      <a
+                        className="nav-link"
+                        onClick={() => {
+                          const elem = document.documentElement; // makes the whole page fullscreen
+                          if (!document.fullscreenElement) {
+                            elem.requestFullscreen().catch((err) => {
+                              console.error(
+                                `Error attempting to enable full-screen mode: ${err.message}`
+                              );
+                            });
+                          } else {
+                            document.exitFullscreen();
+                          }
+                        }}
+                      >
+                     <i
+  className="fi fi-bs-expand d-flex"
+  id="fullscreen-button"
+  style={{ fontSize: "20px" }}
+></i>
+
+                      </a>
+                    </li>
                         <li>
                           <div className="deposit_btn_container d-flex align-items-center">
                             {/* <img
@@ -396,98 +423,21 @@ const StickyHeader = ({ onToggleSidebar }) => {
 
                   
 
-                    <li className="nav-item d-none d-lg-block full-screen-link">
-                      <a
-                        className="nav-link"
-                        onClick={() => {
-                          const elem = document.documentElement; // makes the whole page fullscreen
-                          if (!document.fullscreenElement) {
-                            elem.requestFullscreen().catch((err) => {
-                              console.error(
-                                `Error attempting to enable full-screen mode: ${err.message}`
-                              );
-                            });
-                          } else {
-                            document.exitFullscreen();
-                          }
-                        }}
-                      >
-                        <i className="fi fi-bs-expand" id="fullscreen-button" />
-                      </a>
-                    </li>
+                   
 
-                    <li className="nav-item dropdown">
+                   <li className="nav-item ">
                       <a
-                        className="nav-link count-indicator dropdown-toggle"
+                        className="nav-link count-indicator "
                         id="notificationDropdown"
                         href="#"
                         data-bs-toggle="dropdown"
                       >
-                        <i className="fi fi-rr-bell" />
-                        <span className="count-symbol bg-danger" />
+                       <img src="/assets/img/g2.png" alt="" srcset="" width={"25px"}/>
+
                       </a>
-                      <div
-                        className="dropdown-menu dropdown-menu-end navbar-dropdown preview-list"
-                        aria-labelledby="notificationDropdown"
-                        style={{ background: "#161616" }}
-                      >
-                        <h6 className="p-3 mb-0">Notifications</h6>
-                        <div className="dropdown-divider" />
-                        <a className="dropdown-item preview-item">
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-success">
-                              <i className="mdi mdi-calendar" />
-                            </div>
-                          </div>
-                          <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 className="preview-subject font-weight-normal mb-1">
-                              Event today
-                            </h6>
-                            <p className="text-white ellipsis mb-0">
-                              Just a reminder that you have an event today{" "}
-                            </p>
-                          </div>
-                        </a>
-                        <div className="dropdown-divider" />
-                        <a className="dropdown-item preview-item">
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-warning">
-                              <i className="mdi mdi-cog" />
-                            </div>
-                          </div>
-                          <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 className="preview-subject font-weight-normal mb-1">
-                              Settings
-                            </h6>
-                            <p className="text-white ellipsis mb-0">
-                              {" "}
-                              Update dashboard{" "}
-                            </p>
-                          </div>
-                        </a>
-                        <div className="dropdown-divider" />
-                        <a className="dropdown-item preview-item">
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-info">
-                              <i className="mdi mdi-link-variant" />
-                            </div>
-                          </div>
-                          <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 className="preview-subject font-weight-normal mb-1">
-                              Launch Admin
-                            </h6>
-                            <p className="text-white ellipsis mb-0">
-                              {" "}
-                              New admin wow!{" "}
-                            </p>
-                          </div>sty
-                        </a>
-                        <div className="dropdown-divider" />
-                         <h6 className="p-3 mb-0 text-center">
-                      See all notifications
-                    </h6> 
-                      </div>
+                   
                     </li>
+
 
                     {/* Profile dropdown starts */}
                     <li className="nav-item dropdown">
@@ -498,7 +448,7 @@ const StickyHeader = ({ onToggleSidebar }) => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        <div className="user-icon ms-2">
+                        <div className="user-icon ">
                           {/* <img
                             src="assets/img/icons/man.png"
                             alt=""
@@ -528,11 +478,11 @@ const StickyHeader = ({ onToggleSidebar }) => {
                               "/assets/img/icons/man.png"
                             }
                             alt={user?.avatar?.name || "Profile"}
-                            className="w-100"
+                            className=""
                             style={{
-                              borderRadius: "10%",
-                              width: 36,
-                              height: 36,
+                              borderRadius: "50%",
+                              width: 30,
+                              height: 30,
                               objectFit: "cover",
                             }}
                             onError={(e) => {
@@ -702,13 +652,301 @@ const StickyHeader = ({ onToggleSidebar }) => {
                         className="nav-link count-indicator "
                         id="notificationDropdown"
                         href="#"
-                        data-bs-toggle="dropdown"
+                      
+                          type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasRight"
+  aria-controls="offcanvasRight"
                       >
-                       <img src="/assets/img/list.png" alt="" srcset="" width={"35px"}/>
+                       <img src="/assets/img/list.png" alt="" srcset="" width={"27px"}/>
 
                       </a>
                    
                     </li>
+
+
+                   
+
+<div
+  className="offcanvas offcanvas-end bg-card"
+  tabIndex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasRightLabel">
+      Offcanvas right
+    </h5>
+    <button
+      type="button"
+      className="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div className="offcanvas-body">
+    {/* Your content here */}
+   <div className="container">
+        <div className="offcanvas-header d-flex justify-content-between py-2">
+      
+          {/* <button
+            type="button"
+            className="btn off_canvas_close_btn me-1 bg-white rounded"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <i className="ri-close-large-line text-white fs-17" />
+          </button> */}
+        </div>
+
+        <div className="offcanvas-body p-0">
+          <NavLink
+            to={routes.home}
+            className={({ isActive }) => (isActive ? "active-menu" : "")}
+          >
+            <div className="d-flex align-items-center menu_list_item justify-content-between">
+              <div>
+                <img src="assets/img/SIDEMENU/home.png" alt="menu" width={24} />
+                <span className="mx-3 text-white">Main Page</span>
+              </div>
+            </div>
+          </NavLink>
+          <NavLink to={routes.games.topGames}>
+            <div className="d-flex align-items-center menu_list_item justify-content-between">
+              <div className="">
+                <img
+                  src="assets/img/SIDEMENU/club.png"
+                  alt="menu"
+                  srcSet=""
+                  width={24}
+                />
+                <span className="mx-3 text-white">Spribe Games</span>
+              </div>
+            </div>
+          </NavLink>
+
+          <NavLink to={routes.games.providers}>
+            <div className="d-flex align-items-center menu_list_item justify-content-between">
+              <div className="">
+                <img
+                  src="assets/img/SIDEMENU/club.png"
+                  alt="menu"
+                  srcSet=""
+                  width={24}
+                />
+                <span className="mx-3 text-white">Providers</span>
+              </div>
+            </div>  
+          </NavLink>
+          {/*--accordion--*/}
+
+          {/* <div className="accordion accordion_sec" id="accordionExample">
+            <div className="accordion-item game_title_accordion_item"> */}
+          {/* <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed game_title_btn"
+                  type="button"
+                  // data-bs-toggle="collapse"
+                  // data-bs-target="#collapseOne"
+                  // aria-expanded="true"
+                  // aria-controls="collapseOne"
+                >
+                  <img
+                    src="assets/img/SIDEMENU/chart-mixed-up-circle-dollar.png"
+                    alt="circle_dollar"
+                    srcSet=""
+                    width={24}
+                  />
+                  <span className="mx-3 text-white">Trending Game</span>
+                </button>
+              </h2> */}
+          {/* <div
+                id="collapseOne"
+                className="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+              > */}
+          {/* <NavLink to={routes.games.spribe}>
+                  <div className="accordion-body game_items_accordion">
+                    <div className="d-flex align-items-center game_items_accordion_list">
+                      <div className="">
+                        <img
+                          src="assets/img/two-arrows.png"
+                          alt="two_arrows"
+                          srcSet=""
+                          width={22}
+                        />
+                      </div>
+                      <span className="mx-3 text-white">Spribe</span>
+                    </div>
+                  </div>
+                </NavLink> */}
+
+          {/* <NavLink to={routes.games.turbo}>
+                  <div className="accordion-body game_items_accordion">
+                    <div className="d-flex align-items-center game_items_accordion_list">
+                      <div className="">
+                        <img
+                          src="assets/img/two-arrows.png"
+                          alt=""
+                          srcSet=""
+                          width={22}
+                        />
+                      </div>
+                      <span className="mx-3 text-white">Turbo Games</span>
+                    </div>
+                  </div>
+                </NavLink> */}
+
+          {/* <NavLink to={routes.games.all}>
+                  <div className="accordion-body game_items_accordion">
+                    <div className="d-flex align-items-center game_items_accordion_list">
+                      <div className="">
+                        <img
+                          src="assets/img/two-arrows.png"
+                          alt="two-arrows"
+                          srcSet=""
+                          width={22}
+                        />
+                      </div>
+                      <span className="mx-3 text-white">Slotegrator</span>
+                    </div>
+                  </div>
+                </NavLink> */}
+          {/* </div> */}
+          {/* </div>
+          </div> */}
+          {/*--accordion end--*/}
+          <div className="menu">
+            {/* Main */}
+            <Link to={routes.pages.howToPlay}>
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div>
+                  <img
+                    src="assets/img/SIDEMENU/mode-portrait.png"
+                    alt="mode"
+                    srcSet=""
+                    width={24}
+                  />
+                  {/* Icon for "Main" */}
+                  <span className="mx-3 text-white">How to Play</span>
+                </div>
+                {/* 
+<div class="icon-box">
+<i class="ri-arrow-right-s-line text-white"></i>
+</div>
+*/}
+              </div>
+            </Link>
+
+            {/* how to deposit */}
+            <Link to={routes.transactions.kazang_how_to_deposit}>
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div>
+                  <img
+                    src="assets/img/SIDEMENU/deposit.png"
+                    alt="deposit"
+                    srcSet=""
+                    width={24}
+                  />
+                  {/* Icon for "Main" */}
+                  <span className="mx-3 text-white">How to Deposit</span>
+                </div>
+                {/* 
+<div class="icon-box">
+<i class="ri-arrow-right-s-line text-white"></i>
+</div>
+*/}
+              </div>
+            </Link>
+
+            {/* LIVE */}
+            <Link to={routes.pages.terms}>
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div>
+                  <img
+                    src="assets/img/SIDEMENU/deposit.png"
+                    alt="deposit"
+                    srcSet=""
+                    width={24}
+                  />
+                  {/* Icon for "LIVE" */}
+                  <span className="mx-3 text-white">
+                    Terms &amp; Conditions
+                  </span>
+                </div>
+                {/* <div class="icon-box">
+<i class="ri-arrow-right-s-line text-white"></i>
+</div> */}
+              </div>
+            </Link>
+            {/* LIVE */}
+            {/* <Link to={routes.games.bonus}>
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div>
+                  <img
+                    src="assets/img/icons/gift.png"
+                    alt="gift"
+                    srcSet=""
+                    width={24}
+                  />
+                  <span className="mx-3 text-white">Bonus</span>
+                </div>
+              </div>
+            </Link> */}
+            {/* Sports */}
+            <Link to={routes.pages.privacyPolicy}>
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div>
+                  <img
+                    src="assets/img/SIDEMENU/money-from-bracket.png"
+                    alt="bracket"
+                    srcSet=""
+                    width={24}
+                  />
+                  {/* Existing "Sports" Icon */}
+                  <span className="mx-3 text-white">Privacy Policy</span>
+                </div>
+                {/* <div class="icon-box">
+<i class="ri-arrow-right-s-line text-white"></i>
+</div> */}
+              </div>
+            </Link>
+            {/* Cricket */}
+            {/* <div className="d-flex align-items-center menu_list_item justify-content-between">
+              <div>
+                <img
+                  src="assets/img/SIDEMENU/settings.png"
+                  alt="Setting"
+                  srcSet=""
+                  width={24}
+                />
+                Icon for "Cricket"
+                <span className="mx-3 text-white">Settings</span>
+              </div>
+            </div> */}
+
+            {user && (
+              <div className="d-flex align-items-center menu_list_item justify-content-between">
+                <div 
+                // onClick={handleLogout} style={{ cursor: "pointer" }}
+                
+                >
+                  <img
+                    src="assets/img/SIDEMENU/address-card.png"
+                    alt="address_card"
+                    srcSet=""
+                    width={24}
+                  />
+                  <span className="mx-3 text-white">Logout</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
 
 
 
