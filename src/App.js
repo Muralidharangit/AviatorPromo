@@ -52,6 +52,11 @@ const AddBank = lazy(() => import("./Components/layouts/AddBank"));
 
 const HowToPlay = lazy(() => import("./Components/Pages/HowToPlay"));
 const PrivacyPolicy = lazy(() => import("./Components/Pages/PrivacyPolicy"));
+const FAQ = lazy(() => import("./Components/Pages/FAQ"));
+const LegalDisclaimer = lazy(() =>
+  import("./Components/Pages/LegalDisclaimer")
+);
+const SecurityPolicy = lazy(() => import("./Components/Pages/SecurityPolicy"));
 const TermsCondition = lazy(() => import("./Components/Pages/TermsCondition"));
 const ResponsibleGaming = lazy(() =>
   import("./Components/Pages/Responsiblegame")
@@ -359,6 +364,15 @@ function App() {
           />
           <Route path={routes.pages.terms} element={<TermsCondition />} />
           <Route path={routes.pages.privacy} element={<PrivacyPolicy />} />
+          <Route
+            path={routes.pages.securityPolicy}
+            element={<SecurityPolicy />}
+          />
+          <Route path={routes.pages.Faq} element={<FAQ />} />
+          <Route
+            path={routes.pages.LegalDisclaimer}
+            element={<LegalDisclaimer />}
+          />
           <Route
             path={routes.pages.responsiblegame}
             element={<ResponsibleGaming />}
