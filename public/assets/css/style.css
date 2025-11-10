@@ -793,7 +793,7 @@ swiper-slide img {
 .footer_section ul li a {
   color: var(--text-white);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /*----provider---*/
@@ -7243,3 +7243,10 @@ a.social-icon-box.p-2.rounded.d-flex.justify-content-center.align-items-center.t
 .bg-card{
 background: #14141d;
 }
+
+.bg-cardfooter{
+background: var(--card-bg);
+}
+
+
+
