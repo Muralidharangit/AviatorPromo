@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 :root {
   --primary-color: #e20538;
   --primary-border-color: #e20538;
@@ -17,8 +19,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: "Barlow", sans-serif !important;
+  font-weight: 500;
   background: var(--secondary-color);
   overflow-x: hidden;
   /* max-width: 600px; */
@@ -788,6 +790,7 @@ swiper-slide img {
 
 .footer_section ul li {
   list-style: none !important;
+  padding: 4px 0;
 }
 
 .footer_section ul li a {
@@ -7246,6 +7249,56 @@ background: #14141d;
 
 .bg-cardfooter{
 background: var(--card-bg);
+}
+
+/* --- Social Icons Layout --- */
+.social-icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e2022;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.social-icon i {
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  background: #2b2d31;
+  color: #fff;
+}
+
+/* --- Footer Text Links --- */
+.footer_section a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  color: #fff;
+}
+
+/* --- Responsive Alignment --- */
+@media (max-width: 576px) {
+  .social-icons-wrapper {
+    justify-content: center;
+  }
 }
 
 
