@@ -5,6 +5,14 @@ import OffCanvas from "../../offcanvapages/Offcanva";
 import { Images } from "../Header/constants/images";
 import { APP_NAME } from "../../../constants";
 
+const socialLinks = [
+  { icon: "ri-twitter-x-line", url: "#" },
+  { icon: "ri-instagram-line", url: "#" },
+  { icon: "ri-telegram-line", url: "#" },
+  { icon: "ri-facebook-fill", url: "#" },
+
+];
+
 const paymentImages = [
   {
     src: "https://bucdn.betvibe.in/cdn-cgi/image/fit=scale-down,width=auto,height=70,,format=auto/common-content/footer/payments/icashone.svg",
@@ -42,16 +50,14 @@ const paymentImages = [
 
 const BottomFooter = () => {
   return (
-    <div className="bg-cardfooter">
-      <footer >
-        <div className="footer_section  text-white pt-5 pb-3">
+    <div>
+      <footer>
+        <div className="footer_section text-white pt-5 pb-3">
           <div className="container px-1">
-            {/* ===== Logo and Description ===== */}
-
-             {/* ===== Payment Services Section ===== */}
+            {/* ===== Payment Services Section ===== */}
             <div className="container mt-5">
               <div className="d-flex align-items-center mb-3">
-                <div className="border-start border-3  ps-2">
+                <div className="border-start border-3 ps-2">
                   <h6 className="fw-bold text-uppercase text-white mb-0">
                     Payment Services
                   </h6>
@@ -64,107 +70,114 @@ const BottomFooter = () => {
                     key={index}
                   >
                     <div className="border border-secondary rounded p-2 bg-light bg-opacity-10 hover-scale">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="img-fluid"
-                      />
+                      <img src={item.src} alt={item.alt} className="img-fluid" />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            {/* ===== End Payment Services Section ===== */}
-           
-           
 
-            {/* ===== Footer Navigation Sections ===== */}
+            {/* ===== Main Footer Links ===== */}
             <div className="container mt-4">
               <div className="row">
+                {/* Left Side with Logo, Description, Socials */}
+                <div className="col-lg-5 px-3">
+                  <div className="footer_section__sports">
+                    <div className="top-matches-title d-flex align-items-center gap-2 my-3">
+                      <Link to={routes.home} className="navbar-brand m-0">
+                        <img src={Images.Favlogo2} alt="Logo" width="50%" />
+                      </Link>
+                    </div>
+                    <p className="text-justify">
+                      {APP_NAME} is a multi-award-winning betting app built for
+                      players who love the thrill of the game. With exciting
+                      sports, live matches, and casino-style games, we bring
+                      nonstop entertainment and bigger chances to win. Simple to
+                      use, fast, and secure, {APP_NAME}.TOP is the place where
+                      every bet brings you closer to victory.
+                    </p>
 
-                 <div className="col-lg-5 px-3">
-                <div className="footer_section__sports">
-                  <div className="top-matches-title d-flex align-items-center gap-2 my-3">
-                    {/* <h5 className="m-0 mt-1">{APP_NAME}</h5> */}
-
-                     <Link to={routes.home} className="navbar-brand m-0">
-                  <img src={Images.Favlogo2} alt="Logo" width="50%" />
-                </Link>
-                  </div>
-                  <p className="text-justify ">
-                    {APP_NAME} is a multi-award-winning betting app built for
-                    players who love the thrill of the game. With exciting
-                    sports, live matches, and casino-style games, we bring
-                    nonstop entertainment and bigger chances to win. Simple to
-                    use, fast, and secure, {APP_NAME}.TOP is the place where
-                    every bet brings you closer to victory.
-                  </p>
-
-                     <div className="d-flex gap-3 fs-5">
-                    <i className="fab fa-facebook-f"></i>
-                    <i className="fab fa-instagram"></i>
-                    <i className="fab fa-telegram-plane"></i>
-                    <i className="fab ri-twitter-x-line"></i>
+                 
                   </div>
                 </div>
 
-               
-              </div>
-
-
-                <div className="col-6 col-md-2 mb-3 pt-5">
-                  <h6 className="fw-bold text-white">Casino</h6>
+                {/* Casino Section */}
+                <div className="col-6 col-md-2 mb-3 pt-4">
+                  <h6 className="fw-bold text-white mb-3">Spribe</h6>
                   <ul className="list-unstyled small">
-                    <li><Link to="#" className="">Online Casino</Link></li>
-                    <li><Link to="#" className="">Live Dealer Games</Link></li>
-                    <li><Link to="#" className="">Roulette</Link></li>
-                    <li><Link to="#" className="">See more →</Link></li>
+                    <li>
+                      <Link to="#">Aviator Games</Link>
+                    </li>
+                    <li>
+                      <Link to="#">Dice Games</Link>
+                    </li>
+                    <li>
+                      <Link to="#">Mine Games</Link>
+                    </li>
+                      <li>
+                      <Link to="#">Limbo Games</Link>
+                    </li>
                   </ul>
                 </div>
 
-                <div className="col-6 col-md-2 mb-3 pt-5">
-                  <h6 className="fw-bold text-white">Sport</h6>
+                {/* Sport Section */}
+                <div className="col-6 col-md-2 mb-3 pt-4">
+                  <h6 className="fw-bold text-white mb-3">Refer Doc</h6>
                   <ul className="list-unstyled small">
-                    <li><Link to="#" className="">Bet on Sports</Link></li>
-                    <li><Link to="#" className="">Live Betting</Link></li>
-                    <li><Link to="#" className="">Cricket</Link></li>
-                    <li><Link to="#" className="">See more →</Link></li>
+                    <li>
+                      <Link to="#">Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="#">Terms and Condition</Link>
+                    </li>
+                    <li>
+                      <Link to="#">Refund Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="#">Policy</Link>
+                    </li>
                   </ul>
                 </div>
 
-               
-                <div className="col-6 col-md-3 mb-3 pt-5">
-                  <h6 className="fw-bold text-white">Download App</h6>
-                  <div className="d-flex flex-column align-items-start gap-2">
-                    <img
-                      src="https://bucdn.betvibe.in/common-content/footer/links/google-play.svg"
-                      alt="Google Play"
-                      width="140"
-                    />
-                    <img
-                      src="https://bucdn.betvibe.in/common-content/footer/links/appstore-01.svg"
-                      alt="App Store"
-                      width="130"
-                    />
-                  </div>
-                </div>
 
-                
+                <div className="col-6 col-md-3 mb-3 pt-4">
+                   <h6 className="fw-bold  text-white">
+                        Follow {APP_NAME}
+                      </h6>
+                     {/* ===== Follow Section ===== */}
+                    <div className="mt-4">
+                     
+                      <div className="social-icons-wrapper">
+                        {socialLinks.map((item, index) => (
+                          <a
+                            href={item.url}
+                            key={index}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white"
+                          >
+                            <div className="social-icon">
+                              <i className={`${item.icon}`}></i>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                </div>
               </div>
             </div>
-
-           
           </div>
 
-          <OffCanvas />
-
+          {/* ===== Copyright ===== */}
           <div className="text-center mt-4 border-top border-secondary pt-3">
-            <p className="small mb-0 ">
-              Copyright © 2025 {APP_NAME} <br /> All rights are reserved and
-              protected by law
+            <p className="small mb-0">
+              Copyright © 2025 {APP_NAME} 
+              All rights are reserved and protected by law.
             </p>
           </div>
         </div>
+
+        <OffCanvas />
       </footer>
     </div>
   );

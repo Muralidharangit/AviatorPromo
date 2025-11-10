@@ -869,7 +869,7 @@ function Home() {
                                   slidesPerView: 2, // Tablet view
                                 },
                                 1024: {
-                                  slidesPerView: 3, // Laptop/Desktop view
+                                  slidesPerView: 1, // Laptop/Desktop view
                                 },
                               }}
                             >
@@ -879,7 +879,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/8.png"
+                                  src="assets/img/bn-1.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -889,7 +889,7 @@ function Home() {
                                 onClick={() => handleImageClick("Lucky 6")} // or getName(provider)
                               >
                                 <img
-                                  src="assets/img/slider/lucky 6.png"
+                                  src="https://upload.4rabet6.com/storage/262517/India_en_C.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 5"
                                 />
@@ -900,7 +900,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first6.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -911,7 +911,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first2.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -925,7 +925,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/bingo banner.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -937,7 +937,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first1.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 1" // Improved alt text
                                 />
@@ -949,7 +949,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/10.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -961,7 +961,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first7.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 3"
                                 />
@@ -983,7 +983,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/9.png"
+                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -1005,7 +1005,7 @@ function Home() {
                         {/* HOT GAMES */}
                         <div>
                           {/* Section Title */}
-                          <div className="top-matches-title d-flex align-items-center justify-content-between my-2">
+                          <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
                             <div className="d-flex align-items-center">
                               {isLoadingTypes ? (
                                 <>
@@ -1261,7 +1261,7 @@ function Home() {
 <SkeletonTheme baseColor="#313131" highlightColor="#525252">
   <div>
     {/* Section Title */}
-    <div className="top-matches-title d-flex align-items-center justify-content-between my-2">
+    <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
       <div className="d-flex align-items-center">
         {isLoadingTypes ? (
           <>
@@ -1270,11 +1270,12 @@ function Home() {
           </>
         ) : (
           <>
-            <img
-              src="assets/img/spribe/spribe1.png"
-              width="27"
-              alt="Spribe Icon"
-            />
+        <img
+                                src="assets/img/coin.png"
+                                alt="coin"
+                                srcSet=""
+                                width=""
+                              />{" "}
             <h5 className="m-0 ms-2 d-flex align-items-center">Spribe</h5>
           </>
         )}
@@ -1425,162 +1426,7 @@ function Home() {
                       {/* game list Ends */}
 
                       {/* {{base_url}}/jiboomba/all-games?type=dice */}
-                      {/* all games part */}
-                      <div>
-                        {/* All Games Section Header */}
-                        <div className="top-matches-title d-flex align-items-center justify-content-between my-3">
-                          <div className="d-flex">
-                            {isLoadingGames ? (
-                              // Skeleton for the dot icon
-                              <Skeleton
-                                circle
-                                height={20}
-                                width={20}
-                                className="dot"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <span className="dot" />
-                            )}
-                            {isLoadingGames ? (
-                              // Skeleton for the title text
-                              <Skeleton
-                                height={20}
-                                width={120}
-                                className="ms-2"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <h5 className="m-0 ms-2">All Games</h5>
-                            )}
-                          </div>
-                          <div>
-                            {/* The "All" link typically remains visible even during loading */}
-                            <Link to={routes.games.all}>
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Apply SkeletonTheme for consistent styling of all skeletons in this section */}
-                        <SkeletonTheme
-                          baseColor="#313131"
-                          highlightColor="#525252"
-                        >
-                          {isLoadingGames ? (
-                            // --- Skeleton loading state for the Swiper carousel ---
-                            <swiper-container
-                              className="mySwiper"
-                              space-between="5"
-                              // We can disable autoplay for skeletons, or keep it for the animation feel
-                              loop="true" // Loop might not be necessary for skeletons if you're only showing a few
-                              autoplay='{"delay": 0, "disableOnInteraction": false}' // Keep for visual consistency
-                              speed="2500"
-                              slides-per-view="2.5"
-                              centered-slides="false"
-                              free-mode="true"
-                            >
-                              {/* Render 4 skeleton slides to adequately fill the view */}
-                              {Array.from({ length: 4 }).map((_, index) => (
-                                <SwiperSlide key={index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr p-1">
-                                    <Skeleton
-                                      height={130}
-                                      borderRadius={10}
-                                      baseColor="#313131"
-                                      highlightColor="#525252"
-                                    />
-                                    <div className="mt-2 px-1">
-                                      <Skeleton
-                                        height={12}
-                                        width={`100%`}
-                                        baseColor="#313131"
-                                        highlightColor="#525252"
-                                      />
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))}
-                            </swiper-container>
-                          ) : (
-                            // --- Actual game content once loaded ---
-                            <swiper-container
-                              className="mySwiper"
-                              space-between="5"
-                              autoplay='{"delay": 0, "disableOnInteraction": false}'
-                              slides-per-view="2.5"
-                              centered-slides="false"
-                              free-mode="true"
-                              loop={true}
-                              speed={3000}
-                              slidesPerView={2}
-                              freeMode={true}
-                              breakpoints={{
-                                768: {
-                                  slidesPerView: 6, // Tablet view
-                                },
-                                1024: {
-                                  slidesPerView: 7, // Laptop/Desktop view
-                                },
-                              }}
-                            >
-                              {/* Map over your actual game data to render the slides */}
-                              {allGamesData.map((game, index) => (
-                                <swiper-slide key={index}>
-                                  {game.linkTo ? (
-                                    // Use Link component if a direct route is specified
-                                    <Link
-                                      to={game.linkTo}
-                                      className="game-card-wrapper"
-                                    >
-                                      <div className="game-card">
-                                        <img
-                                          src={game.imgSrc}
-                                          className="game-card-img"
-                                          alt={`Game ${game.type}`}
-                                        />
-                                      </div>
-                                      <div className="game-play-button d-flex flex-column">
-                                        <div className="btn-play">
-                                          <i className="fa-solid fa-play"></i>
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  ) : (
-                                    // Use onClick with navigate for dynamic filtered routes
-                                    <div
-                                      className="game-card-wrapper"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?type=${game.type}`
-                                        )
-                                      }
-                                    >
-                                      <div className="game-card">
-                                        <img
-                                          src={game.imgSrc}
-                                          className="game-card-img"
-                                          alt={`Game ${game.type}`}
-                                        />
-                                      </div>
-                                      <div className="game-play-button">
-                                        <div className="btn-play">
-                                          <i className="fa-solid fa-play"></i>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  )}
-                                </swiper-slide>
-                              ))}
-                            </swiper-container>
-                          )}
-                        </SkeletonTheme>
-                      </div>
-                      {/* all games */}
+             
 
                       {/* Marquee runing */}
 
@@ -1733,7 +1579,7 @@ function Home() {
                       {/*---bonus------*/}
                       <div>
                         <div className="">
-                          <div className="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
+                          <div className="top-matches-title d-flex align-items-center gap-2  my-4 justify-content-between">
                             <div className="d-flex align-items-center">
                               <img
                                 src="assets/img/coin.png"
