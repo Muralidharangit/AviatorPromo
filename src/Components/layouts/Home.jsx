@@ -1256,552 +1256,146 @@ function Home() {
 
                       {/* hot games */}
 
-                      {/* Games Types */}
+                      {/* SPRIBE GAMES */}
+{/* SPRIBE GAMES */}
+<SkeletonTheme baseColor="#313131" highlightColor="#525252">
+  <div>
+    {/* Section Title */}
+    <div className="top-matches-title d-flex align-items-center justify-content-between my-2">
+      <div className="d-flex align-items-center">
+        {isLoadingTypes ? (
+          <>
+            <Skeleton circle height={27} width={27} />
+            <Skeleton height={20} width={100} className="ms-2" />
+          </>
+        ) : (
+          <>
+            <img
+              src="assets/img/spribe/spribe1.png"
+              width="27"
+              alt="Spribe Icon"
+            />
+            <h5 className="m-0 ms-2 d-flex align-items-center">Spribe</h5>
+          </>
+        )}
+      </div>
 
-                      <div className="game-types-section  tabd-none">
-                        {/* Games Type Header */}
-                        <div className="top-matches-title d-flex align-items-center justify-content-between my-2 ">
-                          <div className="d-flex">
-                            {/* Skeleton for icon */}
-                            {isLoadingTypes ? (
-                              <Skeleton
-                                circle
-                                height={27}
-                                width={27}
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <img
-                                src="https://cdn-icons-png.flaticon.com/512/12800/12800987.png"
-                                width="27"
-                                alt="Games Type Icon"
-                              />
-                            )}
-                            {/* Skeleton for title */}
-                            {isLoadingTypes ? (
-                              <Skeleton
-                                height={20}
-                                width={100}
-                                className="ms-2"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <h5 className="m-0 ms-2">Games Type</h5>
-                            )}
-                          </div>
-                          {/* <div>
-                            <Link to={routes.games.all}>
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                            </Link>
-                          </div> */}
-                        </div>
+      <div onClick={() => navigate(`/filtered-games?type=spribe`)}>
+        <span className="text-white fs-13 fw-500 right_heading">
+          All <i className="ri-arrow-right-s-line" />
+        </span>
+      </div>
+    </div>
 
-                        {/* SkeletonTheme for consistent skeleton colors */}
-                        <SkeletonTheme
-                          baseColor="#313131"
-                          highlightColor="#525252"
-                        >
-                          {isLoadingTypes ? (
-                            // Skeleton loading state for game type cards
-                            <>
-                              <div className="d-flex gap-2">
-                                {Array.from({ length: 2 }).map(
-                                  (
-                                    _,
-                                    index // 2 cards in the first row
-                                  ) => (
-                                    <div
-                                      key={`skeleton-1-${index}`}
-                                      className="card bg-cardtrans p-1"
-                                      style={{ flex: "1 1 auto" }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <Skeleton
-                                          height={15}
-                                          width="60%"
-                                          className="mb-1"
-                                        />{" "}
-                                        {/* Text skeleton */}
-                                        <Skeleton
-                                          height={50}
-                                          width="100%"
-                                        />{" "}
-                                        {/* Image skeleton */}
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                              <div className="mt-2">
-                                <div className="d-flex gap-2">
-                                  {Array.from({ length: 3 }).map(
-                                    (
-                                      _,
-                                      index // 3 cards in the second row
-                                    ) => (
-                                      <div
-                                        key={`skeleton-2-${index}`}
-                                        className="card bg-cardtrans p-1"
-                                        style={{ flex: "1 1 auto" }}
-                                      >
-                                        <div className="flex-column d-flex">
-                                          <Skeleton
-                                            height={15}
-                                            width="60%"
-                                            className="mb-1"
-                                          />
-                                          <Skeleton height={50} width="100%" />
-                                        </div>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                              <div className="d-flex gap-2 mt-2">
-                                {Array.from({ length: 2 }).map(
-                                  (
-                                    _,
-                                    index // 2 cards in the third row
-                                  ) => (
-                                    <div
-                                      key={`skeleton-3-${index}`}
-                                      className="card bg-cardtrans p-1"
-                                      style={{ flex: "1 1 auto" }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <Skeleton
-                                          height={15}
-                                          width="60%"
-                                          className="mb-1"
-                                        />
-                                        <Skeleton height={50} width="100%" />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </>
-                          ) : (
-                            // Actual game type cards when loaded
-                            <>
-                              <div className="d-flex gap-2">
-                                {gameTypes.slice(0, 2).map(
-                                  (
-                                    game // First row: Casino, Roulette
-                                  ) => (
-                                    <div
-                                      key={game.type} // Using game.type as key since it's unique
-                                      className="card bg-cardtrans p-1"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?type=${game.type}`
-                                        )
-                                      }
-                                      role="button"
-                                      tabIndex="0"
-                                      onKeyPress={(e) => {
-                                        if (
-                                          e.key === "Enter" ||
-                                          e.key === " "
-                                        ) {
-                                          // Added spacebar for accessibility
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          );
-                                        }
-                                      }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <span className="text-white fw-500 fs-13">
-                                          {game.name}
-                                        </span>
-                                        <img
-                                          src={game.imgSrc}
-                                          alt={game.name}
-                                        />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
+    {/* Swiper Section */}
+    <Swiper
+      className="mySwiper"
+      modules={[Autoplay, FreeMode]}
+      spaceBetween={5}
+      loop={true}
+      autoplay={{ delay: 0, disableOnInteraction: false }}
+      speed={3000}
+      slidesPerView={2}
+      freeMode={true}
+      breakpoints={{
+        768: { slidesPerView: 5 },
+        1024: { slidesPerView: 6 },
+      }}
+    >
+      {/* Static Spribe Slides */}
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe1.webp" className="game-card-img position-relative" alt="Spribe 1" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
 
-                              <div className="mt-2">
-                                <div className="d-flex gap-2">
-                                  {gameTypes.slice(2, 5).map(
-                                    (
-                                      game // Second row: Crash, Lottery, Instant
-                                    ) => (
-                                      <div
-                                        key={game.type}
-                                        className="card bg-cardtrans p-1"
-                                        onClick={() =>
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          )
-                                        }
-                                        role="button"
-                                        tabIndex="0"
-                                        onKeyPress={(e) => {
-                                          if (
-                                            e.key === "Enter" ||
-                                            e.key === " "
-                                          ) {
-                                            navigate(
-                                              `/filtered-games?search=${game.type}`
-                                            );
-                                          }
-                                        }}
-                                      >
-                                        <div className="flex-column d-flex">
-                                          <span className="text-white fw-500 fs-13">
-                                            {game.name}
-                                          </span>
-                                          <img
-                                            src={game.imgSrc}
-                                            alt={game.name}
-                                          />
-                                        </div>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe2.webp" className="game-card-img position-relative" alt="Spribe 2" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
 
-                              <div className="d-flex gap-2 mt-2">
-                                {gameTypes.slice(5, 7).map(
-                                  (
-                                    game // Third row: Slots, Dice
-                                  ) => (
-                                    <div
-                                      key={game.type}
-                                      className="card bg-cardtrans p-1"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?search=${game.type}`
-                                        )
-                                      }
-                                      role="button"
-                                      tabIndex="0"
-                                      onKeyPress={(e) => {
-                                        if (
-                                          e.key === "Enter" ||
-                                          e.key === " "
-                                        ) {
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          );
-                                        }
-                                      }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <span className="text-white fw-500 fs-13">
-                                          {game.name}
-                                        </span>
-                                        <img
-                                          src={game.imgSrc}
-                                          alt={game.name}
-                                        />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </>
-                          )}
-                        </SkeletonTheme>
-                      </div>
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe3.webp" className="game-card-img position-relative" alt="Spribe 3" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
 
-                      {/* Games Types */}
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe4.webp" className="game-card-img position-relative" alt="Spribe 4" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe5.png" className="game-card-img position-relative" alt="Spribe 5" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe6.webp" className="game-card-img position-relative" alt="Spribe 6" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 p-1">
+            <img src="assets/img/spribe/spribe7.webp" className="game-card-img position-relative" alt="Spribe 7" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <i className="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  </div>
+</SkeletonTheme>
+{/* spribe games */}
+
+{/* spribe games */}
+
+
+                      
 
                       <>
             {/* Simulating the Header/Nav Bar from the image */}
          
-            <div className="container-main">
-                {/* --- Main Bonus Section --- */}
-                <section className="bonus-section-main">
-                    <div className="bonus-text-block">
-                        <h6>Welcome Bonus Offer</h6>
-                        <h2>
-                            <span className="d-inline-block">500% BONUS</span> UP TO $90,000 + 100 FREE SPINS
-                        </h2>
-                        <p>
-                            Play with up to $90,000 on your first three deposits
-                        </p>
-                        <a href="#" className="deposit-btn-img">
-                            Deposit Now <i className="fas fa-chevron-right ms-2"></i>
-                        </a>
-                    </div>
-                    
-                    {/* Placeholder for the Attractive Bonus Image */}
-                    <div className="bonus-graphic d-none d-md-block">
-                        <img src="https://picsum.photos/400/300?grayscale&random=3" alt="Graphic of a slot machine with coins" />
-                        <p>path/to/bonus-offer-img.png</p>
-                    </div>
-                </section>
-
-                {/* --- Payment Info Section (Two Cards) --- */}
-                <div className="payment-info-row">
-                    {/* Card 1: Main Payment Value */}
-                    <div className="payment-card payment-card-left">
-                        <h6>Payment Method</h6>
-                        <div className="payment-value">
-                            <i className="fab fa-btc me-2" style={{ color: 'var(--primary-color)' }}></i> $90, NUS
-                        </div>
-                    </div>
-
-                    {/* Card 2: Logos and Currencies */}
-                    <div className="payment-card payment-card-right">
-                        <div className="w-100 mb-3">
-                            <h6>Payment Method (50 nevight mb)</h6>
-                            <div className="payment-icons-container">
-                                <i className="fab fa-cc-visa" title="Visa"></i>
-                                <i className="fab fa-cc-mastercard" title="MasterCard"></i>
-                                <i className="fab fa-cc-jcb" title="JCB"></i>
-                                <i className="fab fa-cc-paypal" title="PayPal"></i>
-                                <i className="fab fa-cc-discover" title="Discover"></i>
-                            </div>
-                        </div>
-                        
-                        <div className="w-100 d-flex justify-content-between align-items-center flex-wrap">
-                            <h6>Accepted Currency</h6>
-                            <div className="currency-icons-container">
-                                <i className="fab fa-btc" title="Bitcoin"></i>
-                                <i className="fab fa-ethereum" title="Ethereum"></i>
-                                <i className="fas fa-yen-sign" title="Yen/JPY"></i>
-                                <i className="fab fa-cc-paypal" title="PayPal"></i>
-                                <i className="fab fa-cc-stripe" title="Stripe/Payment"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* --- Secondary Bonus Cards Section --- */}
-                <div className="section-title">
-                    Like bonuses? <strong>See what TrustDice got for you</strong>
-                </div>
-
-                <div className="bonus-cards-grid">
-                    {/* Card 1: Bitcoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 1</h6>
-                        <div className="card-icon-placeholder">
-                            <i className="fab fa-bitcoin" style={{ color: 'black' }}></i>
-                        </div>
-                        <p>Https: 83C 8% of hestion</p>
-                    </div>
-                    
-                    {/* Card 2: Building/Casino */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 2</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#f7931a' }}>
-                            <i className="fas fa-building" style={{ color: 'white' }}></i>
-                        </div>
-                        <p>Https Fidd on eran Detetige</p>
-                    </div>
-                    
-                    {/* Card 3: Litecoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 3</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#3a80df' }}>
-                            <i className="fas fa-lira-sign" style={{ color: 'white' }}></i>
-                        </div>
-                        <p>Color tictet do get Hoge DOGE</p>
-                    </div>
-                    
-                    {/* Card 4: Dogecoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 1</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#c2a84d' }}>
-                            <i className="fas fa-dog" style={{ color: '#333' }}></i>
-                        </div>
-                        <p>Temsofroum Co be UP I DOGE</p>
-                    </div>
-                </div>
-            </div>
+          
         </>
 
-                      <>
-                        {/* Games Types */}
-                        <div className="mobile-none">
-                          <div className="top-matches-title d-flex align-items-center justify-content-between   my-3">
-                            <div className="d-flex">
-                              <img
-                                src="https://cdn-icons-png.flaticon.com/512/12800/12800987.png"
-                                width="27"
-                                alt="Games Type Icon"
-                              />
-                              <h5 className="m-0 ms-2">Games Type</h5>
-                            </div>
-                            {/* <div>
-                              <a href="./Allgames.html">
-                                <span className="text-white fs-13 fw-500 right_heading">
-                                  All <i className="ri-arrow-right-s-line" />
-                                </span>
-                              </a>
-                            </div> */}
-                          </div>
-                          <div className="d-flex gap-2">
-                            <div className="col-4 ">
-                              <div
-                                className="card bg-cardtrans p-1"
-                                style={{
-                                  backgroundImage:
-                                    "linear-gradient(to left, rgb(255 70 42 / 30%), transparent 75%) !important",
-                                }}
-                              >
-                                <div
-                                  className="flex-column d-flex"
-                                  onClick={() =>
-                                    navigate(`/filtered-games?type=card`)
-                                  }
-                                >
-                                  <span className="text-white fw-500 fs-13  py-2 px-1">
-                                    Casino
-                                  </span>
-                                  <img
-                                    src="assets/img/casino.png"
-                                    alt=""
-                                    srcSet=""
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-4 ">
-                              <div
-                                className="card bg-cardtrans p-1"
-                                style={{
-                                  backgroundImage:
-                                    "linear-gradient(to left, rgb(35 105 157 / 44%), transparent 75%) !important",
-                                }}
-                              >
-                                <div
-                                  className="flex-column d-flex"
-                                  onClick={() =>
-                                    navigate(`/filtered-games?search=instant`)
-                                  }
-                                >
-                                  <span className="text-white fw-500 fs-13  py-2 px-1">
-                                    Instant
-                                  </span>
-                                  <img
-                                    src="assets/img/sports.png"
-                                    alt=""
-                                    srcSet=""
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-4 ">
-                              <div className="d-flex  flex-wrap  gap-2">
-                                <div className="w-45 ">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(181 114 28 / 30%), transparent 60%) !important",
-                                    }}
-                                  >
-                                    <div
-                                      className="flex-column d-flex"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?search=lottery`
-                                        )
-                                      }
-                                    >
-                                      <span className="text-white fw-500 fs-13 py-2 px-1">
-                                        Lottery
-                                      </span>
-                                      <img
-                                        src="assets/img/lottery.png
-                  "
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 ">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(123 64 14 / 49%), transparent 75%) !important",
-                                    }}
-                                  >
-                                    <div
-                                      className="flex-column d-flex"
-                                      onClick={() =>
-                                        navigate(`/filtered-games?search=slots`)
-                                      }
-                                    >
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Slot
-                                      </span>
-                                      <img
-                                        src="assets/img/horse.png"
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 pt-2">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(190 191 183 / 27%), transparent 75%) !important",
-                                    }}
-                                    onClick={() =>
-                                      navigate(`/filtered-games?search=dice`)
-                                    }
-                                  >
-                                    <div className="flex-column d-flex">
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Dice
-                                      </span>
-                                      <img
-                                        src="assets/img/up.png"
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 pt-2">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(123 64 14 / 49%), transparent 75%) !important",
-                                    }}
-                                    onClick={() =>
-                                      navigate(`/filtered-games?search=bingo`)
-                                    }
-                                  >
-                                    <div className="flex-column d-flex">
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Bingo
-                                      </span>
-                                      <img
-                                        src="assets/img/bingo.png
-            "
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </>
+                   
 
                       {/* games types end */}
                       {/* games types end */}
@@ -1994,125 +1588,7 @@ function Home() {
 
                       {/* Dice of games all filer */}
 
-                      {/* Slot Gaming */}
-                      <SkeletonTheme
-                        baseColor="#313131"
-                        highlightColor="#525252"
-                      >
-                        {/* SLOT GAMES */}
-                        <div>
-                          <div className="top-matches-title d-flex align-items-center justify-content-between my-3">
-                            <div className="d-flex">
-                              <span className="dot" />
-                              <h5 className="m-0 ms-2 d-flex align-items-center">
-                                Slot Games
-                              </h5>
-                            </div>
-                            <div
-                              onClick={() =>
-                                navigate(`/filtered-games?type=slots`)
-                              }
-                            >
-                              {/* <Link to={routes.games.all}> */}
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                              {/* </Link> */}
-                            </div>
-                          </div>
-
-                          {/* Swiper for Slot Games */}
-                          <Swiper
-                            className="mySwiper"
-                            modules={[Autoplay, FreeMode]}
-                            spaceBetween={5}
-                            loop={true}
-                            autoplay={{ delay: 0, disableOnInteraction: false }}
-                            speed={3000}
-                            slidesPerView={2}
-                            freeMode={true}
-                            breakpoints={{
-                              768: {
-                                slidesPerView: 5, // Tablet view
-                              },
-                              1024: {
-                                slidesPerView: 7, // Laptop/Desktop view
-                              },
-                            }}
-                          >
-                            {isLoadingSmartSoftGames ? (
-                              // Skeleton loader
-                              Array.from({ length: 4 }).map((_, index) => (
-                                <SwiperSlide key={index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr p-1">
-                                    <Skeleton height={130} borderRadius={10} />
-                                    <div className="mt-2 px-1">
-                                      <Skeleton height={12} width="100%" />
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : isErrorSmartSoft ? (
-                              // Error message
-                              <div className="d-flex flex-column align-items-center mt-5 w-100">
-                                <p className="text-white text-center">
-                                  Error loading slot games:{" "}
-                                  {errorSmartSoft.message}
-                                </p>
-                              </div>
-                            ) : smartSoftGames.length > 0 ? (
-                              // Game cards
-                              smartSoftGames.map((game, index) => (
-                                <SwiperSlide key={game.uuid || index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr">
-                                    <div className="game-card p-0 m-0 p-1">
-                                      <img
-                                        src={
-                                          game.image
-                                            ? game.image
-                                            : "assets/img/play_now.png"
-                                        }
-                                        className="game-card-img"
-                                        alt={game.name}
-                                      />
-                                      <div className="btn-play position-absolute top-50 start-50 translate-middle">
-                                        <i className="fa-solid fa-play"></i>
-                                      </div>
-                                      {/* <div className="d-flex flex-column text-white text-center py-2 px-1">
-                              <span className="fs-12 fw-bold text-truncate">
-                                {game.name}
-                              </span>
-                              <span className="fs-10">Duel</span>
-                            </div> */}
-                                    </div>
-                                    <div className="game-play-button d-flex flex-column">
-                                      <div
-                                        className="btn-play"
-                                        onClick={() => handleGameClick(game)}
-                                      >
-                                        <i className="fa-solid fa-play"></i>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : (
-                              // No games message
-                              <div className="d-flex flex-column align-items-center mt-5 w-100">
-                                <img
-                                  src="assets/img/notification/img_2.png"
-                                  alt="unauth"
-                                  className="w-25"
-                                />
-                                <p className="text-white text-center">
-                                  No slot games available
-                                </p>
-                              </div>
-                            )}
-                          </Swiper>
-                        </div>
-                      </SkeletonTheme>
-
+                     
                       {/* slot game end */}
 
                       {/* Provider running list starts*/}
@@ -2515,6 +1991,7 @@ function Home() {
                     </section>
 
                     {/* Footer Start */}
+                    
 
                     <Footer />
                     {/* {!showFullScreenGame && <Footer />} */}
