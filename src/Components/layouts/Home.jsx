@@ -1256,162 +1256,7 @@ function Home() {
                       {/* hot games */}
 
                       {/* SPRIBE GAMES */}
-{/* SPRIBE GAMES */}
-<SkeletonTheme baseColor="#313131" highlightColor="#525252" className="">
-  <div>
- 
-    <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
-      <div className="d-flex align-items-center">
-        {isLoadingTypes ? (
-          <>
-            <Skeleton circle height={27} width={27} />
-            <Skeleton height={20} width={100} className="ms-2" />
-          </>
-        ) : (
-          <>
-        <img
-                                src="assets/img/coin.png"
-                                alt="coin"
-                                srcSet=""
-                                width=""
-                              />{" "}
-            <h5 className="m-0 ms-2 d-flex align-items-center">Spribe</h5>
-          </>
-        )}
-      </div>
 
-      <div onClick={() => navigate(`/filtered-games?type=spribe`)}>
-        <span className="text-white fs-13 fw-500 right_heading">
-          All <i className="ri-arrow-right-s-line" />
-        </span>
-      </div>
-    </div>
-
-  
-    <Swiper
-      className="mySwiper new-card"
-      modules={[Autoplay, FreeMode]}
-      spaceBetween={10}
-      loop={true}
-      autoplay={{ delay: 0, disableOnInteraction: false }}
-      speed={3000}
-      slidesPerView={2}
-      freeMode={true}
-      breakpoints={{
-        768: { slidesPerView: 5 },
-        1024: { slidesPerView: 6 },
-      }}
-    >
-    
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe2.png" className="game-card-img position-relative" alt="Spribe 1" />
-
-         
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe1.png" className="game-card-img position-relative" alt="Spribe 2" />
-          
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spibe8.png" className="game-card-img position-relative" alt="Spribe 3" />
-         
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-    
-      
-     
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe4.png" className="game-card-img position-relative" alt="Spribe 4" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe5.png" className="game-card-img position-relative" alt="Spribe 5" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe6.png" className="game-card-img position-relative" alt="Spribe 6" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe7.png" className="game-card-img position-relative" alt="Spribe 7" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe3.png" className="game-card-img position-relative" alt="Spribe 7" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe8.png" className="game-card-img position-relative" alt="Spribe 7" />
-            <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <span className="play-text">PLAY</span>
-            </div>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
-  </div>
-</SkeletonTheme>
-{/* spribe games */}
 
 
 
@@ -1531,12 +1376,15 @@ function Home() {
       </div>
        <div className="col-md-8">
 
+        
+      
+
          <div className="row gy-3">
      {/* Static Spribe Slides */}
       <div   className="col-xl-3 col-lg-3 px-1" >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe2.png" className="game-card-img position-relative" alt="Spribe 1" />
+            <img src="/assets/img/spribe/aviator.png" className="game-card-img position-relative" alt="Spribe 1" />
 
             {/* UPDATED PLAY BUTTON: Icon replaced with text and new class */}
          
@@ -1547,7 +1395,7 @@ function Home() {
       <div  className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe1.png" className="game-card-img position-relative" alt="Spribe 2" />
+            <img src="assets/img/spribe/dice.png" className="game-card-img position-relative" alt="Spribe 2" />
             {/* UPDATED PLAY BUTTON */}
           
           </div>
@@ -1557,7 +1405,7 @@ function Home() {
       <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spibe8.png" className="game-card-img position-relative" alt="Spribe 3" />
+            <img src="assets/img/spribe/goal.png" className="game-card-img position-relative" alt="Spribe 3" />
             {/* UPDATED PLAY BUTTON */}
            
           </div>
@@ -1570,7 +1418,7 @@ function Home() {
       <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe4.png" className="game-card-img position-relative" alt="Spribe 4" />
+            <img src="assets/img/spribe/plinko.png" className="game-card-img position-relative" alt="Spribe 4" />
             
           </div>
         </div>
@@ -1579,7 +1427,7 @@ function Home() {
        <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe5.png" className="game-card-img position-relative" alt="Spribe 5" />
+            <img src="assets/img/spribe/miniroulette.png" className="game-card-img position-relative" alt="Spribe 5" />
            
           </div>
         </div>
@@ -1588,7 +1436,7 @@ function Home() {
        <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe6.png" className="game-card-img position-relative" alt="Spribe 6" />
+            <img src="assets/img/spribe/mines.png" className="game-card-img position-relative" alt="Spribe 6" />
            
           </div>
         </div>
@@ -1597,7 +1445,7 @@ function Home() {
       <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe7.png" className="game-card-img position-relative" alt="Spribe 7" />
+            <img src="assets/img/spribe/hotline.png" className="game-card-img position-relative" alt="Spribe 7" />
            
           </div>
         </div>
@@ -1606,7 +1454,7 @@ function Home() {
        <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe3.png" className="game-card-img position-relative" alt="Spribe 7" />
+            <img src="assets/img/spribe/hilo.png" className="game-card-img position-relative" alt="Spribe 7" />
             
           </div>
         </div>
@@ -1615,7 +1463,7 @@ function Home() {
        <div className="col-xl-3 col-lg-3 px-1"  >
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
           <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/spribe8.png" className="game-card-img position-relative" alt="Spribe 7" />
+            <img src="assets/img/spribe/keno.png" className="game-card-img position-relative" alt="Spribe 7" />
            
           </div>
         </div>
