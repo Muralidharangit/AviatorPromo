@@ -7302,4 +7302,156 @@ background: var(--card-bg);
 }
 
 
+.newavi
+.deposit-card {
+  background-color: #1e1e22;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
+.newavi
+.bonus-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.newavi
+.highlight {
+  color: #e20538; /* Neon green highlight */
+}
+
+.newavi
+.deposit-text {
+  color: #bfbfbf;
+  font-size: 0.95rem;
+  max-width: 480px;
+}
+
+.newavi
+.icon {
+  /* width: 38px;
+  height: 38px; */
+  /* border-radius: 50%; */
+  /* background-color: #2a2a2e; */
+  padding: 6px;
+  width: 50px;
+  background: #fff;
+  border-radius: 5px;
+  height: 40px;
+  object-fit: contain;
+
+}
+
+.newavi
+.btn-light {
+  background-color: #f5f5f5;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.newavi
+.btn-light:hover {
+  background-color: #e20538;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  
+.newavi
+  .deposit-card {
+    text-align: center;
+  }
+
+.newavi
+  .payment-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+/**
+ * --------------------------------
+ * Scoped Styling for Full Card Blur on Hover
+ * --------------------------------
+ */
+
+/* 1. Base Card Styling & Transition */
+.new-card .game-card-wrapper {
+  position: relative; 
+  overflow: hidden; 
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* Base style for the game card image */
+.new-card .game-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Add transition for a smooth blur/darken effect */
+  transition: filter 0.3s ease-out;
+}
+
+/* Card Hover Effect: Lifts the card and increases shadow for depth */
+.new-card .game-card-wrapper:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Blur/Darken Effect on Hover */
+.new-card .game-card-wrapper:hover .game-card-img {
+    /* KEY CHANGE: Apply blur and darkening filter directly to the image */
+    filter: blur(4px) brightness(0.6); 
+}
+ 
+/* 2. Animated PLAY Button Styling */
+.new-card .btn-play {
+  /* It is essential that the button's z-index is higher than the image */
+  z-index: 10; 
+  
+  /* Initial state: Hidden and transformed */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8) rotate(-10deg); 
+  
+  /* Smooth transition for appearance */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Style the actual 'PLAY' text element (BRIGHT RED, PILL DESIGN) */
+.new-card .play-text {
+ display: block;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #e20538;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 10px #e20538;
+    cursor: pointer;
+    filter: none;
+}
+
+/* Button Hover Effect: Pop-in animation */
+.new-card .game-card-wrapper:hover .btn-play {
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+}
+
+/* Optional: Feedback when hovering directly over the button */
+.new-card .play-text:hover {
+    background-color: #ff3366; 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1), 
+                0 0 15px #ff3366;
+}
+
+.gametypes{
+ background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 60px;
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 15px !important;
+}

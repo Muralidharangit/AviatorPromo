@@ -822,7 +822,7 @@ function Home() {
                       <span className="visually-hidden">Loading</span>
                     </div>
                     <p>Launching game, please wait...</p>
-                  </div>
+                  </div> 
                 )}
 
                 <ToastContainer
@@ -866,7 +866,7 @@ function Home() {
                               }} // Added disableOnInteraction for better UX
                               breakpoints={{
                                 768: {
-                                  slidesPerView: 2, // Tablet view
+                                  slidesPerView: 1, // Tablet view
                                 },
                                 1024: {
                                   slidesPerView: 1, // Laptop/Desktop view
@@ -879,7 +879,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/bn-1.png"
+                                  src="assets/img/slider/bn1.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -889,7 +889,7 @@ function Home() {
                                 onClick={() => handleImageClick("Lucky 6")} // or getName(provider)
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/262517/India_en_C.png"
+                                    src="assets/img/slider/bn2.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 5"
                                 />
@@ -900,7 +900,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
+                                    src="assets/img/slider/bn3.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -911,7 +911,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
+                                    src="assets/img/slider/bn4.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -925,7 +925,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
+                                   src="assets/img/slider/bn5.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -937,7 +937,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
+                                    src="assets/img/slider/bn6.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 1" // Improved alt text
                                 />
@@ -949,45 +949,15 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
+                                    src="assets/img/slider/bn7.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
                               </SwiperSlide>
 
-                              <SwiperSlide
-                                onClick={() =>
-                                  navigate(`/filtered-games?search=lucky`)
-                                }
-                              >
-                                <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 3"
-                                />
-                              </SwiperSlide>
-                              {/* <SwiperSlide onClick={() =>
-                                    navigate(`/filtered-games?type=card`)
-                                  }
- >
-                                <img
-                                  src="assets/img/slider/first4.png"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 4" xfd
-                                />
-                              </SwiperSlide> */}
-
-                              <SwiperSlide
-                                onClick={() =>
-                                  navigate(`/filtered-games?search=card`)
-                                }
-                              >
-                                <img
-                                  src="https://upload.4rabet6.com/storage/251023/India_en_Casino_.jpg"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 6"
-                                />
-                              </SwiperSlide>
+                             
+                           
+                            
                             </Swiper>
                           )}
                         </div>
@@ -998,13 +968,13 @@ function Home() {
 
                       {/* HOT GAMES */}
                       {/* HOT GAMES */}
-                      <SkeletonTheme
+                      {/* <SkeletonTheme
                         baseColor="#313131"
                         highlightColor="#525252"
                       >
-                        {/* HOT GAMES */}
+                       
                         <div>
-                          {/* Section Title */}
+                        
                           <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
                             <div className="d-flex align-items-center">
                               {isLoadingTypes ? (
@@ -1035,15 +1005,15 @@ function Home() {
                                 navigate(`/filtered-games?type=hot`)
                               }
                             >
-                              {/* <Link to="/all-games"> */}
+                             
                               <span className="text-white fs-13 fw-500 right_heading">
                                 All <i className="ri-arrow-right-s-line" />
                               </span>
-                              {/* </Link> */}
+                             
                             </div>
                           </div>
 
-                          {/* Swiper Section */}
+                         
                           <Swiper
                             className="mySwiper"
                             modules={[Autoplay, FreeMode]}
@@ -1055,14 +1025,14 @@ function Home() {
                             freeMode={true}
                             breakpoints={{
                               768: {
-                                slidesPerView: 5, // Tablet view
+                                slidesPerView: 5, 
                               },
                               1024: {
-                                slidesPerView: 6, // Laptop/Desktop view
+                                slidesPerView: 6, 
                               },
                             }}
                           >
-                            {isLoadingDiceGame ? ( // ✅ use the new loading state
+                            {isLoadingDiceGame ? ( 
                               Array.from({ length: 4 }).map((_, index) => (
                                 <SwiperSlide key={index}>
                                   <div className="game-card-wrapper rounded-2 new-cardclr p-1">
@@ -1111,7 +1081,7 @@ function Home() {
                             )}
                           </Swiper>
 
-                          {/* Fullscreen Game Iframe */}
+                        
                           {showFullScreenGame && selectedGameUrl && (
                             <div className="bg-danger h-100">
                               <div
@@ -1127,7 +1097,7 @@ function Home() {
                                   height: "100dvh",
                                 }}
                               >
-                                {/* Navbar only appears if iframe loaded successfully */}
+                               
                                 {iframeLoaded && !iframeError && (
                                   <nav
                                     className="navbar py-1 navbar-dark bg-black sticky-top shadow-sm d-flex align-items-center"
@@ -1145,7 +1115,7 @@ function Home() {
                                   </nav>
                                 )}
 
-                                {/* Iframe or Error Message */}
+                              
                                 <div
                                   className="flex-grow-1 d-flex justify-content-center align-items-center"
                                   style={{ height: "95%" }}
@@ -1178,7 +1148,7 @@ function Home() {
                                   )}
                                 </div>
 
-                                {/* Modal */}
+                           
                                 {showModal && (
                                   <div
                                     className="modal-backdrop d-flex justify-content-center align-items-center"
@@ -1251,16 +1221,16 @@ function Home() {
                             </div>
                           )}
                         </div>
-                      </SkeletonTheme>
+                      </SkeletonTheme> */}
                       {/* hot games */}
 
                       {/* hot games */}
 
                       {/* SPRIBE GAMES */}
 {/* SPRIBE GAMES */}
-<SkeletonTheme baseColor="#313131" highlightColor="#525252">
+<SkeletonTheme baseColor="#313131" highlightColor="#525252" className="">
   <div>
-    {/* Section Title */}
+ 
     <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
       <div className="d-flex align-items-center">
         {isLoadingTypes ? (
@@ -1288,11 +1258,11 @@ function Home() {
       </div>
     </div>
 
-    {/* Swiper Section */}
+  
     <Swiper
-      className="mySwiper"
+      className="mySwiper new-card"
       modules={[Autoplay, FreeMode]}
-      spaceBetween={5}
+      spaceBetween={10}
       loop={true}
       autoplay={{ delay: 0, disableOnInteraction: false }}
       speed={3000}
@@ -1303,13 +1273,15 @@ function Home() {
         1024: { slidesPerView: 6 },
       }}
     >
-      {/* Static Spribe Slides */}
+    
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe1.webp" className="game-card-img position-relative" alt="Spribe 1" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe2.png" className="game-card-img position-relative" alt="Spribe 1" />
+
+         
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1317,10 +1289,11 @@ function Home() {
 
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe2.webp" className="game-card-img position-relative" alt="Spribe 2" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe1.png" className="game-card-img position-relative" alt="Spribe 2" />
+          
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1328,21 +1301,25 @@ function Home() {
 
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe3.webp" className="game-card-img position-relative" alt="Spribe 3" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spibe8.png" className="game-card-img position-relative" alt="Spribe 3" />
+         
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
       </SwiperSlide>
 
+    
+      
+     
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe4.webp" className="game-card-img position-relative" alt="Spribe 4" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe4.png" className="game-card-img position-relative" alt="Spribe 4" />
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1350,10 +1327,10 @@ function Home() {
 
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
-          <div className="game-card p-0 m-0 p-1">
+          <div className="game-card p-0 m-0 ">
             <img src="assets/img/spribe/spribe5.png" className="game-card-img position-relative" alt="Spribe 5" />
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1361,10 +1338,10 @@ function Home() {
 
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe6.webp" className="game-card-img position-relative" alt="Spribe 6" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe6.png" className="game-card-img position-relative" alt="Spribe 6" />
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1372,10 +1349,32 @@ function Home() {
 
       <SwiperSlide>
         <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 p-1">
-            <img src="assets/img/spribe/spribe7.webp" className="game-card-img position-relative" alt="Spribe 7" />
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe7.png" className="game-card-img position-relative" alt="Spribe 7" />
             <div className="btn-play position-absolute top-50 start-50 translate-middle">
-              <i className="fa-solid fa-play"></i>
+              <span className="play-text">PLAY</span>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe3.png" className="game-card-img position-relative" alt="Spribe 7" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <span className="play-text">PLAY</span>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe8.png" className="game-card-img position-relative" alt="Spribe 7" />
+            <div className="btn-play position-absolute top-50 start-50 translate-middle">
+              <span className="play-text">PLAY</span>
             </div>
           </div>
         </div>
@@ -1385,7 +1384,282 @@ function Home() {
 </SkeletonTheme>
 {/* spribe games */}
 
+
+
+{/* SPRIBE GAMES */}
+<div baseColor="#313131" highlightColor="#525252">
+  <div>
+    {/* Section Title */}
+    <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
+      <div className="d-flex align-items-center">
+        {isLoadingTypes ? (
+          <>
+            <Skeleton circle height={27} width={27} />
+            <Skeleton height={20} width={100} className="ms-2" />
+          </>
+        ) : (
+          <>
+        <img
+                                src="assets/img/coin.png"
+                                alt="coin"
+                                srcSet=""
+                                width=""
+                              />{" "}
+            <h5 className="m-0 ms-2 d-flex align-items-center">Spribe Games Types</h5>
+          </>
+        )}
+      </div>
+
+      <div onClick={() => navigate(`/filtered-games?type=spribe`)}>
+        <span className="text-white fs-13 fw-500 right_heading">
+          All <i className="ri-arrow-right-s-line" />
+        </span>
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="col-md-4">
+     <div className="newavi deposit-section container px-0 position-relative">
+  <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4 position-relative overflow-hidden">
+    
+    {/* NEW BADGES SECTION - Added here */}
+   
+    
+    {/* Left Content */}
+    <div className="text-content text-white mb-3 mb-md-0 ">
+    
+      <h3 className="bonus-title">
+        Spribe Games <span className="highlight"> Deposit Bonus</span>
+      </h3>
+      <p className="fw-semibold mb-2">on your first deposit</p>
+      
+      {/* ... (rest of your content) ... */}
+      
+      <div className="w-100 d-flex justify-content-end">
+        <div className="w-75">
+          <div className="deposit-text mb-3 gametypes text-end " >
+
+            
+            <span className="fs-14">All Players </span>
+            <h3 className="fs-16">Spribe Games :: 99999999</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end position-relative" >
+               <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
+     >
+        
+        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
+        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
+    </div> 
+            <span className="fs-14">Top Rated Games</span>
+            <h3 className="fs-16">Games :: Aviator</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end position-relative" >
+
+             <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
+     >
+        
+        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
+        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
+    </div> 
+            <span className="fs-14">Bonus upto</span>
+            <h3 className="fs-16">Amounts :: 100%</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end" >
+            <span className="fs-14">Bonus upto</span>
+            <h3 className="fs-16">Amounts :: 100%</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div className="d-flex justify-content-end position-relative">
+        <div>
+          <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
+            Deposit Now
+          </button>
+        </div>
+      </div>
+
+      {/* Plane Image */}
+      <div 
+        className="position-absolute" 
+        style={{
+          bottom: '0%', 
+          left: '-76px', 
+          transform: 'rotate(339deg)'
+        }}
+      >
+        <img src="https://ifrd.4rabet6.com/img/main/red-plane.png" alt="" srcset="" className="w-100 right-0 top-0"/>
+      </div>
+    </div>
+
+    {/* Right Icons - Originally empty, now ensuring content aligns correctly */}
+    {/* Adding an empty div to maintain original flex layout separation */}
+    <div className="right-icons"></div> 
+
+  </div>
+</div>
+
+      </div>
+       <div className="col-md-8">
+
+         <div className="row gy-3">
+     {/* Static Spribe Slides */}
+      <div   className="col-xl-3 col-lg-3 px-1" >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe2.png" className="game-card-img position-relative" alt="Spribe 1" />
+
+            {/* UPDATED PLAY BUTTON: Icon replaced with text and new class */}
+         
+          </div>
+        </div>
+      </div>
+
+      <div  className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe1.png" className="game-card-img position-relative" alt="Spribe 2" />
+            {/* UPDATED PLAY BUTTON */}
+          
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spibe8.png" className="game-card-img position-relative" alt="Spribe 3" />
+            {/* UPDATED PLAY BUTTON */}
+           
+          </div>
+        </div>
+      </div>
+
+      {/* ... Add the new PLAY text to all remaining SwiperSlides ... */}
+      
+      {/* Example of the rest of the slides updated: */}
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe4.png" className="game-card-img position-relative" alt="Spribe 4" />
+            
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe5.png" className="game-card-img position-relative" alt="Spribe 5" />
+           
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe6.png" className="game-card-img position-relative" alt="Spribe 6" />
+           
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe7.png" className="game-card-img position-relative" alt="Spribe 7" />
+           
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe3.png" className="game-card-img position-relative" alt="Spribe 7" />
+            
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/spribe8.png" className="game-card-img position-relative" alt="Spribe 7" />
+           
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    {/* Swiper Section */}
+   
+  </div>
+</div>
 {/* spribe games */}
+
+
+{/* spribe games */}
+
+
+{/* deposite way */}
+
+ <div className="newavi deposit-section container my-5 px-0">
+      <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4">
+        {/* Left Content */}
+        <div className="text-content text-white mb-3 mb-md-0">
+          <h3 className="bonus-title">
+            Get up to <span className="highlight">$100 Deposit Bonus</span>
+          </h3>
+          <p className="fw-semibold mb-2">on your first deposit</p>
+          <p className="deposit-text mb-3">
+            We accept many popular deposit methods including cryptocurrencies
+            such as Bitcoin, Ethereum, Solana, USDT, and more!
+          </p>
+          <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
+            Deposit Now
+          </button>
+        </div>
+
+        {/* Right Icons */}
+        <div className="payment-icons d-flex align-items-center gap-2">
+          <img
+            src="assets/img/icons/p1 (6).png"
+            alt="Mastercard"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (5).png"
+            alt="Visa"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (4).png"
+            alt="Bitcoin"
+            className="icon"
+          />
+          <img
+            src="assets/img/icons/p1 (3).png"
+            alt="Ethereum"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (2).png"
+            alt="USDC"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (1).png"
+            alt="Tether"
+            className="icon"
+          />
+        </div>
+      </div>
+    </div>
+
 
 
                       
@@ -1599,14 +1873,92 @@ function Home() {
                           </div>
 
                           <div className="row">
+                              <div className="col-lg-4">
+    <div className="bouns_sec mb-3 h-100">
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div
+            className="bonus_card_sec"
+            style={{
+              background:
+                "linear-gradient( 205deg,  rgba(122,0,0,1) 32%, rgba(217,42,42,1) 74.4% )"
+            }}
+
+          
+          >
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>100% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="w-75 rounded"
+                  src="https://upload.4rabet6.com/storage/263963/PNG_PlayTech---Lucky-Rush-2.png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div className="col-lg-4">
     <div className="bouns_sec mb-3"  >
       <div className="card bonus_card">
         <div className="card-body p-0">
           <div className="bonus_card_sec"  style={{
-              background:
-                "rgb(9, 95, 205"
-            }}>
+  background:
+    "linear-gradient(238.08deg, rgb(22, 123, 245) 0%, rgb(17, 99, 208) 33%, rgb(8, 62, 155) 65%, rgb(1, 32, 110) 100%)",
+}}
+>
             <div className="bonus_sec_top p-4 py-2">
               <div className="bonus_sec_content">
                 <span>Casino</span>
@@ -1677,10 +2029,14 @@ function Home() {
         <div className="card-body p-0">
           <div
             className="bonus_card_sec"
-            style={{
-              background:
-                "linear-gradient(238.08deg, rgb(242, 220, 20) 0%, rgb(207, 165, 16) 33%, rgb(151, 94, 9) 65%, rgb(74, 42, 4) 100%)"
-            }}
+          style={{
+  backgroundImage:
+    "linear-gradient(120deg, rgb(125 81 41) 0%, rgb(165 118 24) 100%)",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+}}
+
+
           >
             <div className="bonus_sec_top p-4 py-2">
               <div className="bonus_sec_content">
@@ -1748,81 +2104,7 @@ function Home() {
   </div>
   {/* ekgoeih */}
 
-  <div className="col-lg-4">
-    <div className="bouns_sec mb-3 h-100">
-      <div className="card bonus_card">
-        <div className="card-body p-0">
-          <div
-            className="bonus_card_sec"
-            style={{
-              background:
-                "linear-gradient(238.08deg, rgb(157, 71, 255) 0%, rgb(109, 35, 230) 33%, rgb(79, 21, 174) 65%, rgb(52, 8, 125) 100%)"
-            }}
-          >
-            <div className="bonus_sec_top p-4 py-2">
-              <div className="bonus_sec_content">
-                <span>Casino</span>
-                <span className="text-shadow">
-                  <p>100% Crash</p>
-                  <p>Power Bonus</p>
-                </span>
-              </div>
-              <div className="bonus_sec_img">
-                <img
-                  alt="img"
-                  className="w-75 rounded"
-                  src="https://upload.4rabet6.com/storage/263963/PNG_PlayTech---Lucky-Rush-2.png"
-                />
-              </div>
-            </div>
-            <div className="bonusBlock_other__bottom p-2">
-              <div className="timer_block_container">
-                <div className="timer_block_inner d-flex align-items-center justify-content-center">
-                  <div
-                    className="timer_block_countdown"
-                    style={{ maxWidth: 300 }}
-                  >
-                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
-                      <div className="timer-block_days">
-                        <div className="countdown_value" id="days">
-                          3
-                        </div>
-                        <div className="countdown_label">Days</div>
-                      </div>
-                      <div className="timer-block_hours">
-                        <div className="countdown_value" id="hours">
-                          12
-                        </div>
-                        <div className="countdown_label">Hours</div>
-                      </div>
-                      <div className="separator">:</div>
-                      <div className="timer-block_minutes">
-                        <div className="countdown_value" id="minutes">
-                          31
-                        </div>
-                        <div className="countdown_label">Mins</div>
-                      </div>
-                      <div className="separator">:</div>
-                      <div className="timer-block_seconds">
-                        <div className="countdown_value" id="seconds">
-                          33
-                        </div>
-                        <div className="countdown_label">Secs</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bonus_bottom_btn">
-                <button className="btn btn-red w-100">Get bonus</button>
-                <button className="btn btn-outline-light w-100">Details</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
                         </div>
