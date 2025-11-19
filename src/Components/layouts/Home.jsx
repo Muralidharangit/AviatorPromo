@@ -475,7 +475,7 @@ function Home() {
     }
   };
 
-  // game URL Iframe Opens here
+ 
   // const handleGameClick = async (game) => {
   //   if (!game.provider || !game.name || !game.uuid) {
   //     toast.error("Missing game info.");
@@ -783,6 +783,31 @@ function Home() {
     }
   };
   // back btn setup Ends
+
+   const  miniroulette = "Mini Roulette";
+  const getLocalImage = (gameName) => {
+  const name = gameName.toLowerCase();
+
+  // Map names → local images
+  const imageMap = {
+ 
+
+     aviator: "/assets/img/spribe/aviator.png",
+    dice: "/assets/img/spribe/dice.png",
+    goal: "/assets/img/spribe/goal.png",
+    hilo: "/assets/img/spribe/hilo.png",
+    hotline: "/assets/img/spribe/hotline.png",
+    mines: "/assets/img/spribe/mines.png",
+    plinko: "/assets/img/spribe/plinko.png",
+    keno: "/assets/img/spribe/keno.png",
+    miniroulette: "/assets/img/spribe/miniroulette.png", // works even for "Mini Roulette"
+  };
+
+  // find the matching key
+  const key = Object.keys(imageMap).find((k) => name.includes(k));
+
+  return key ? imageMap[key] : "/assets/img/play_now.png"; 
+};
   return (
     <>
       {/* header  */}
@@ -968,7 +993,7 @@ function Home() {
 
                       {/* HOT GAMES */}
                       {/* HOT GAMES */}
-                      {/* <SkeletonTheme
+                      <SkeletonTheme
                         baseColor="#313131"
                         highlightColor="#525252"
                       >
@@ -1052,11 +1077,13 @@ function Home() {
                                   >
                                     <div className="game-card p-0 m-0 p-1 ">
                                       <img
-                                        src={
-                                          game.image
-                                            ? game.image
-                                            : "assets/img/play_now.png"
-                                        }
+                                        // src={
+                                        //   game.image
+                                        //     ? game.image
+                                        //     : "assets/img/play_now.png"
+                                        // }
+
+                                        src={getLocalImage(game.name)}
                                         className="game-card-img position-relative"
                                         alt={game.name}
                                       />
@@ -1080,6 +1107,8 @@ function Home() {
                               </div>
                             )}
                           </Swiper>
+
+                          
 
                         
                           {showFullScreenGame && selectedGameUrl && (
@@ -1221,7 +1250,7 @@ function Home() {
                             </div>
                           )}
                         </div>
-                      </SkeletonTheme> */}
+                      </SkeletonTheme>
                       {/* hot games */}
 
                       {/* hot games */}
