@@ -17,7 +17,7 @@ const HowToPlay = () => {
       {/* <section className="container pt-40 text-white"> */}
       <div className="container-fluid page-body-wrapper">
         {/* Sidebar Nav Starts */}
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* Sidebar Nav Ends */}
         <div className="main-panel">
           <div className="content-wrapper">
@@ -151,10 +151,8 @@ const HowToPlay = () => {
                     💡 You can monitor your deposits, withdrawals, and bets
                     under <strong>History &gt; Transactions</strong>. If you
                     notice unauthorized activity, contact{" "}
-                    <a href="#">
-                      support@{APP_NAME}.in
-                    </a>{" "}
-                    immediately and update your password.
+                    <a href="#">support@{APP_NAME}.in</a> immediately and update
+                    your password.
                   </div>
 
                   <h2>Do You Think You Have a Problem?</h2>

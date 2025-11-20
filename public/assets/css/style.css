@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 :root {
   --primary-color: #e20538;
   --primary-border-color: #e20538;
@@ -17,8 +19,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: "Barlow", sans-serif !important;
+  font-weight: 500;
   background: var(--secondary-color);
   overflow-x: hidden;
   /* max-width: 600px; */
@@ -788,12 +790,13 @@ swiper-slide img {
 
 .footer_section ul li {
   list-style: none !important;
+  padding: 4px 0;
 }
 
 .footer_section ul li a {
   color: var(--text-white);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /*----provider---*/
@@ -2334,12 +2337,20 @@ li.nav-item button {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
   color: #e4e4e4;
   font-size: 0.875rem;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   margin-right: 1rem;
-  height: 70px;
+  height: 44px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
+  align-items: center;
+  background: #14141d;
+  color: #fff;
+  border: 1px solid #2e2e36;
+  transition: 0.3s;
+  border-radius: 50%;
+  width: 44px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -2351,7 +2362,7 @@ li.nav-item button {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
 }
 
 .navbar
@@ -7232,3 +7243,215 @@ a.social-icon-box.p-2.rounded.d-flex.justify-content-center.align-items-center.t
     background: #1e2022;
 }
 
+.bg-card{
+background: #14141d;
+}
+
+.bg-cardfooter{
+background: var(--card-bg);
+}
+
+/* --- Social Icons Layout --- */
+.social-icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e2022;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.social-icon i {
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  background: #2b2d31;
+  color: #fff;
+}
+
+/* --- Footer Text Links --- */
+.footer_section a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  color: #fff;
+}
+
+/* --- Responsive Alignment --- */
+@media (max-width: 576px) {
+  .social-icons-wrapper {
+    justify-content: center;
+  }
+}
+
+
+.newavi
+.deposit-card {
+  background-color: #1e1e22;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.newavi
+.bonus-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.newavi
+.highlight {
+  color: #e20538; /* Neon green highlight */
+}
+
+.newavi
+.deposit-text {
+  color: #bfbfbf;
+  font-size: 0.95rem;
+  max-width: 480px;
+}
+
+.newavi
+.icon {
+  /* width: 38px;
+  height: 38px; */
+  /* border-radius: 50%; */
+  /* background-color: #2a2a2e; */
+  padding: 6px;
+  width: 50px;
+  background: #fff;
+  border-radius: 5px;
+  height: 40px;
+  object-fit: contain;
+
+}
+
+.newavi
+.btn-light {
+  background-color: #f5f5f5;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.newavi
+.btn-light:hover {
+  background-color: #e20538;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  
+.newavi
+  .deposit-card {
+    text-align: center;
+  }
+
+.newavi
+  .payment-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+/**
+ * --------------------------------
+ * Scoped Styling for Full Card Blur on Hover
+ * --------------------------------
+ */
+
+/* 1. Base Card Styling & Transition */
+.new-card .game-card-wrapper {
+  position: relative; 
+  overflow: hidden; 
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* Base style for the game card image */
+.new-card .game-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Add transition for a smooth blur/darken effect */
+  transition: filter 0.3s ease-out;
+}
+
+/* Card Hover Effect: Lifts the card and increases shadow for depth */
+.new-card .game-card-wrapper:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Blur/Darken Effect on Hover */
+.new-card .game-card-wrapper:hover .game-card-img {
+    /* KEY CHANGE: Apply blur and darkening filter directly to the image */
+    filter: blur(4px) brightness(0.6); 
+}
+ 
+/* 2. Animated PLAY Button Styling */
+.new-card .btn-play {
+  /* It is essential that the button's z-index is higher than the image */
+  z-index: 10; 
+  
+  /* Initial state: Hidden and transformed */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8) rotate(-10deg); 
+  
+  /* Smooth transition for appearance */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Style the actual 'PLAY' text element (BRIGHT RED, PILL DESIGN) */
+.new-card .play-text {
+ display: block;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #e20538;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 10px #e20538;
+    cursor: pointer;
+    filter: none;
+}
+
+/* Button Hover Effect: Pop-in animation */
+.new-card .game-card-wrapper:hover .btn-play {
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+}
+
+/* Optional: Feedback when hovering directly over the button */
+.new-card .play-text:hover {
+    background-color: #ff3366; 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1), 
+                0 0 15px #ff3366;
+}
+
+.gametypes{
+ background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 60px;
+    width: 100%;
+    padding: 9px 10px;
+    margin-bottom: 15px !important;
+}

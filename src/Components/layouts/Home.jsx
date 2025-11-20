@@ -475,7 +475,7 @@ function Home() {
     }
   };
 
-  // game URL Iframe Opens here
+ 
   // const handleGameClick = async (game) => {
   //   if (!game.provider || !game.name || !game.uuid) {
   //     toast.error("Missing game info.");
@@ -783,6 +783,31 @@ function Home() {
     }
   };
   // back btn setup Ends
+
+   const  miniroulette = "Mini Roulette";
+  const getLocalImage = (gameName) => {
+  const name = gameName.toLowerCase();
+
+  // Map names → local images
+  const imageMap = {
+ 
+
+     aviator: "/assets/img/spribe/aviator.png",
+    dice: "/assets/img/spribe/dice.png",
+    goal: "/assets/img/spribe/goal.png",
+    hilo: "/assets/img/spribe/hilo.png",
+    hotline: "/assets/img/spribe/hotline.png",
+    mines: "/assets/img/spribe/mines.png",
+    plinko: "/assets/img/spribe/plinko.png",
+    keno: "/assets/img/spribe/keno.png",
+    miniroulette: "/assets/img/spribe/miniroulette.png", // works even for "Mini Roulette"
+  };
+
+  // find the matching key
+  const key = Object.keys(imageMap).find((k) => name.includes(k));
+
+  return key ? imageMap[key] : "/assets/img/play_now.png"; 
+};
   return (
     <>
       {/* header  */}
@@ -822,7 +847,7 @@ function Home() {
                       <span className="visually-hidden">Loading</span>
                     </div>
                     <p>Launching game, please wait...</p>
-                  </div>
+                  </div> 
                 )}
 
                 <ToastContainer
@@ -866,10 +891,10 @@ function Home() {
                               }} // Added disableOnInteraction for better UX
                               breakpoints={{
                                 768: {
-                                  slidesPerView: 2, // Tablet view
+                                  slidesPerView: 1, // Tablet view
                                 },
                                 1024: {
-                                  slidesPerView: 3, // Laptop/Desktop view
+                                  slidesPerView: 1, // Laptop/Desktop view
                                 },
                               }}
                             >
@@ -879,7 +904,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/8.png"
+                                  src="assets/img/slider/bn1.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -889,7 +914,7 @@ function Home() {
                                 onClick={() => handleImageClick("Lucky 6")} // or getName(provider)
                               >
                                 <img
-                                  src="assets/img/slider/lucky 6.png"
+                                    src="assets/img/slider/bn2.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 5"
                                 />
@@ -900,7 +925,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first6.png"
+                                    src="assets/img/slider/bn3.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
@@ -911,7 +936,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first2.png"
+                                    src="assets/img/slider/bn4.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -925,7 +950,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/bingo banner.png"
+                                   src="assets/img/slider/bn5.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 2"
                                 />
@@ -937,7 +962,7 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/first1.png"
+                                    src="assets/img/slider/bn6.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 1" // Improved alt text
                                 />
@@ -949,45 +974,15 @@ function Home() {
                                 }
                               >
                                 <img
-                                  src="assets/img/slider/10.png"
+                                    src="assets/img/slider/bn7.png"
                                   className="w-100 rounded-2"
                                   alt="Gaming Banner Slide 6"
                                 />
                               </SwiperSlide>
 
-                              <SwiperSlide
-                                onClick={() =>
-                                  navigate(`/filtered-games?search=lucky`)
-                                }
-                              >
-                                <img
-                                  src="assets/img/slider/first7.png"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 3"
-                                />
-                              </SwiperSlide>
-                              {/* <SwiperSlide onClick={() =>
-                                    navigate(`/filtered-games?type=card`)
-                                  }
- >
-                                <img
-                                  src="assets/img/slider/first4.png"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 4" xfd
-                                />
-                              </SwiperSlide> */}
-
-                              <SwiperSlide
-                                onClick={() =>
-                                  navigate(`/filtered-games?search=card`)
-                                }
-                              >
-                                <img
-                                  src="assets/img/slider/9.png"
-                                  className="w-100 rounded-2"
-                                  alt="Gaming Banner Slide 6"
-                                />
-                              </SwiperSlide>
+                             
+                           
+                            
                             </Swiper>
                           )}
                         </div>
@@ -1002,10 +997,10 @@ function Home() {
                         baseColor="#313131"
                         highlightColor="#525252"
                       >
-                        {/* HOT GAMES */}
+                       
                         <div>
-                          {/* Section Title */}
-                          <div className="top-matches-title d-flex align-items-center justify-content-between my-2">
+                        
+                          <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
                             <div className="d-flex align-items-center">
                               {isLoadingTypes ? (
                                 <>
@@ -1035,15 +1030,15 @@ function Home() {
                                 navigate(`/filtered-games?type=hot`)
                               }
                             >
-                              {/* <Link to="/all-games"> */}
+                             
                               <span className="text-white fs-13 fw-500 right_heading">
                                 All <i className="ri-arrow-right-s-line" />
                               </span>
-                              {/* </Link> */}
+                             
                             </div>
                           </div>
 
-                          {/* Swiper Section */}
+                         
                           <Swiper
                             className="mySwiper"
                             modules={[Autoplay, FreeMode]}
@@ -1055,14 +1050,14 @@ function Home() {
                             freeMode={true}
                             breakpoints={{
                               768: {
-                                slidesPerView: 5, // Tablet view
+                                slidesPerView: 5, 
                               },
                               1024: {
-                                slidesPerView: 6, // Laptop/Desktop view
+                                slidesPerView: 6, 
                               },
                             }}
                           >
-                            {isLoadingDiceGame ? ( // ✅ use the new loading state
+                            {isLoadingDiceGame ? ( 
                               Array.from({ length: 4 }).map((_, index) => (
                                 <SwiperSlide key={index}>
                                   <div className="game-card-wrapper rounded-2 new-cardclr p-1">
@@ -1082,11 +1077,13 @@ function Home() {
                                   >
                                     <div className="game-card p-0 m-0 p-1 ">
                                       <img
-                                        src={
-                                          game.image
-                                            ? game.image
-                                            : "assets/img/play_now.png"
-                                        }
+                                        // src={
+                                        //   game.image
+                                        //     ? game.image
+                                        //     : "assets/img/play_now.png"
+                                        // }
+
+                                        src={getLocalImage(game.name)}
                                         className="game-card-img position-relative"
                                         alt={game.name}
                                       />
@@ -1111,7 +1108,9 @@ function Home() {
                             )}
                           </Swiper>
 
-                          {/* Fullscreen Game Iframe */}
+                          
+
+                        
                           {showFullScreenGame && selectedGameUrl && (
                             <div className="bg-danger h-100">
                               <div
@@ -1127,7 +1126,7 @@ function Home() {
                                   height: "100dvh",
                                 }}
                               >
-                                {/* Navbar only appears if iframe loaded successfully */}
+                               
                                 {iframeLoaded && !iframeError && (
                                   <nav
                                     className="navbar py-1 navbar-dark bg-black sticky-top shadow-sm d-flex align-items-center"
@@ -1145,7 +1144,7 @@ function Home() {
                                   </nav>
                                 )}
 
-                                {/* Iframe or Error Message */}
+                              
                                 <div
                                   className="flex-grow-1 d-flex justify-content-center align-items-center"
                                   style={{ height: "95%" }}
@@ -1178,7 +1177,7 @@ function Home() {
                                   )}
                                 </div>
 
-                                {/* Modal */}
+                           
                                 {showModal && (
                                   <div
                                     className="modal-backdrop d-flex justify-content-center align-items-center"
@@ -1256,552 +1255,299 @@ function Home() {
 
                       {/* hot games */}
 
-                      {/* Games Types */}
+                      {/* SPRIBE GAMES */}
 
-                      <div className="game-types-section  tabd-none">
-                        {/* Games Type Header */}
-                        <div className="top-matches-title d-flex align-items-center justify-content-between my-2 ">
-                          <div className="d-flex">
-                            {/* Skeleton for icon */}
-                            {isLoadingTypes ? (
-                              <Skeleton
-                                circle
-                                height={27}
-                                width={27}
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <img
-                                src="https://cdn-icons-png.flaticon.com/512/12800/12800987.png"
-                                width="27"
-                                alt="Games Type Icon"
-                              />
-                            )}
-                            {/* Skeleton for title */}
-                            {isLoadingTypes ? (
-                              <Skeleton
-                                height={20}
-                                width={100}
-                                className="ms-2"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <h5 className="m-0 ms-2">Games Type</h5>
-                            )}
-                          </div>
-                          {/* <div>
-                            <Link to={routes.games.all}>
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                            </Link>
-                          </div> */}
-                        </div>
 
-                        {/* SkeletonTheme for consistent skeleton colors */}
-                        <SkeletonTheme
-                          baseColor="#313131"
-                          highlightColor="#525252"
-                        >
-                          {isLoadingTypes ? (
-                            // Skeleton loading state for game type cards
-                            <>
-                              <div className="d-flex gap-2">
-                                {Array.from({ length: 2 }).map(
-                                  (
-                                    _,
-                                    index // 2 cards in the first row
-                                  ) => (
-                                    <div
-                                      key={`skeleton-1-${index}`}
-                                      className="card bg-cardtrans p-1"
-                                      style={{ flex: "1 1 auto" }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <Skeleton
-                                          height={15}
-                                          width="60%"
-                                          className="mb-1"
-                                        />{" "}
-                                        {/* Text skeleton */}
-                                        <Skeleton
-                                          height={50}
-                                          width="100%"
-                                        />{" "}
-                                        {/* Image skeleton */}
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                              <div className="mt-2">
-                                <div className="d-flex gap-2">
-                                  {Array.from({ length: 3 }).map(
-                                    (
-                                      _,
-                                      index // 3 cards in the second row
-                                    ) => (
-                                      <div
-                                        key={`skeleton-2-${index}`}
-                                        className="card bg-cardtrans p-1"
-                                        style={{ flex: "1 1 auto" }}
-                                      >
-                                        <div className="flex-column d-flex">
-                                          <Skeleton
-                                            height={15}
-                                            width="60%"
-                                            className="mb-1"
-                                          />
-                                          <Skeleton height={50} width="100%" />
-                                        </div>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                              <div className="d-flex gap-2 mt-2">
-                                {Array.from({ length: 2 }).map(
-                                  (
-                                    _,
-                                    index // 2 cards in the third row
-                                  ) => (
-                                    <div
-                                      key={`skeleton-3-${index}`}
-                                      className="card bg-cardtrans p-1"
-                                      style={{ flex: "1 1 auto" }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <Skeleton
-                                          height={15}
-                                          width="60%"
-                                          className="mb-1"
-                                        />
-                                        <Skeleton height={50} width="100%" />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </>
-                          ) : (
-                            // Actual game type cards when loaded
-                            <>
-                              <div className="d-flex gap-2">
-                                {gameTypes.slice(0, 2).map(
-                                  (
-                                    game // First row: Casino, Roulette
-                                  ) => (
-                                    <div
-                                      key={game.type} // Using game.type as key since it's unique
-                                      className="card bg-cardtrans p-1"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?type=${game.type}`
-                                        )
-                                      }
-                                      role="button"
-                                      tabIndex="0"
-                                      onKeyPress={(e) => {
-                                        if (
-                                          e.key === "Enter" ||
-                                          e.key === " "
-                                        ) {
-                                          // Added spacebar for accessibility
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          );
-                                        }
-                                      }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <span className="text-white fw-500 fs-13">
-                                          {game.name}
-                                        </span>
-                                        <img
-                                          src={game.imgSrc}
-                                          alt={game.name}
-                                        />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
 
-                              <div className="mt-2">
-                                <div className="d-flex gap-2">
-                                  {gameTypes.slice(2, 5).map(
-                                    (
-                                      game // Second row: Crash, Lottery, Instant
-                                    ) => (
-                                      <div
-                                        key={game.type}
-                                        className="card bg-cardtrans p-1"
-                                        onClick={() =>
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          )
-                                        }
-                                        role="button"
-                                        tabIndex="0"
-                                        onKeyPress={(e) => {
-                                          if (
-                                            e.key === "Enter" ||
-                                            e.key === " "
-                                          ) {
-                                            navigate(
-                                              `/filtered-games?search=${game.type}`
-                                            );
-                                          }
-                                        }}
-                                      >
-                                        <div className="flex-column d-flex">
-                                          <span className="text-white fw-500 fs-13">
-                                            {game.name}
-                                          </span>
-                                          <img
-                                            src={game.imgSrc}
-                                            alt={game.name}
-                                          />
-                                        </div>
-                                      </div>
-                                    )
-                                  )}
-                                </div>
-                              </div>
 
-                              <div className="d-flex gap-2 mt-2">
-                                {gameTypes.slice(5, 7).map(
-                                  (
-                                    game // Third row: Slots, Dice
-                                  ) => (
-                                    <div
-                                      key={game.type}
-                                      className="card bg-cardtrans p-1"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?search=${game.type}`
-                                        )
-                                      }
-                                      role="button"
-                                      tabIndex="0"
-                                      onKeyPress={(e) => {
-                                        if (
-                                          e.key === "Enter" ||
-                                          e.key === " "
-                                        ) {
-                                          navigate(
-                                            `/filtered-games?search=${game.type}`
-                                          );
-                                        }
-                                      }}
-                                    >
-                                      <div className="flex-column d-flex">
-                                        <span className="text-white fw-500 fs-13">
-                                          {game.name}
-                                        </span>
-                                        <img
-                                          src={game.imgSrc}
-                                          alt={game.name}
-                                        />
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            </>
-                          )}
-                        </SkeletonTheme>
-                      </div>
+{/* SPRIBE GAMES */}
+<div baseColor="#313131" highlightColor="#525252">
+  <div>
+    {/* Section Title */}
+    <div className="top-matches-title d-flex align-items-center justify-content-between my-4">
+      <div className="d-flex align-items-center">
+        {isLoadingTypes ? (
+          <>
+            <Skeleton circle height={27} width={27} />
+            <Skeleton height={20} width={100} className="ms-2" />
+          </>
+        ) : (
+          <>
+        <img
+                                src="assets/img/coin.png"
+                                alt="coin"
+                                srcSet=""
+                                width=""
+                              />{" "}
+            <h5 className="m-0 ms-2 d-flex align-items-center">Spribe Games Types</h5>
+          </>
+        )}
+      </div>
 
-                      {/* Games Types */}
+      <div onClick={() => navigate(`/filtered-games?type=spribe`)}>
+        <span className="text-white fs-13 fw-500 right_heading">
+          All <i className="ri-arrow-right-s-line" />
+        </span>
+      </div>
+    </div>
+
+    <div className="row">
+      <div className="col-md-4">
+     <div className="newavi deposit-section container px-0 position-relative">
+  <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4 position-relative overflow-hidden">
+    
+    {/* NEW BADGES SECTION - Added here */}
+   
+    
+    {/* Left Content */}
+    <div className="text-content text-white mb-3 mb-md-0 ">
+    
+      <h3 className="bonus-title">
+        Spribe Games <span className="highlight"> Deposit Bonus</span>
+      </h3>
+      <p className="fw-semibold mb-2">on your first deposit</p>
+      
+      {/* ... (rest of your content) ... */}
+      
+      <div className="w-100 d-flex justify-content-end">
+        <div className="w-75">
+          <div className="deposit-text mb-3 gametypes text-end " >
+
+            
+            <span className="fs-14">All Players </span>
+            <h3 className="fs-16">Spribe Games :: 99999999</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end position-relative" >
+               <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
+     >
+        
+        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
+        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
+    </div> 
+            <span className="fs-14">Top Rated Games</span>
+            <h3 className="fs-16">Games :: Aviator</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end position-relative" >
+
+             <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
+     >
+        
+        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
+        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
+    </div> 
+            <span className="fs-14">Bonus upto</span>
+            <h3 className="fs-16">Amounts :: 100%</h3>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end" >
+            <span className="fs-14">Bonus upto</span>
+            <h3 className="fs-16">Amounts :: 100%</h3>
+          </div>
+        </div>
+      </div>
+      
+      <div className="d-flex justify-content-end position-relative">
+        <div>
+          <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
+            Deposit Now
+          </button>
+        </div>
+      </div>
+
+      {/* Plane Image */}
+      <div 
+        className="position-absolute" 
+        style={{
+          bottom: '0%', 
+          left: '-76px', 
+          transform: 'rotate(339deg)'
+        }}
+      >
+        <img src="https://ifrd.4rabet6.com/img/main/red-plane.png" alt="" srcset="" className="w-100 right-0 top-0"/>
+      </div>
+    </div>
+
+    {/* Right Icons - Originally empty, now ensuring content aligns correctly */}
+    {/* Adding an empty div to maintain original flex layout separation */}
+    <div className="right-icons"></div> 
+
+  </div>
+</div>
+
+      </div>
+       <div className="col-md-8">
+
+        
+      
+
+         <div className="row gy-3">
+     {/* Static Spribe Slides */}
+      <div   className="col-xl-3 col-lg-3 px-1" >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="/assets/img/spribe/aviator.png" className="game-card-img position-relative" alt="Spribe 1" />
+
+            {/* UPDATED PLAY BUTTON: Icon replaced with text and new class */}
+         
+          </div>
+        </div>
+      </div>
+
+      <div  className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/dice.png" className="game-card-img position-relative" alt="Spribe 2" />
+            {/* UPDATED PLAY BUTTON */}
+          
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/goal.png" className="game-card-img position-relative" alt="Spribe 3" />
+            {/* UPDATED PLAY BUTTON */}
+           
+          </div>
+        </div>
+      </div>
+
+      {/* ... Add the new PLAY text to all remaining SwiperSlides ... */}
+      
+      {/* Example of the rest of the slides updated: */}
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/plinko.png" className="game-card-img position-relative" alt="Spribe 4" />
+            
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/miniroulette.png" className="game-card-img position-relative" alt="Spribe 5" />
+           
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/mines.png" className="game-card-img position-relative" alt="Spribe 6" />
+           
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/hotline.png" className="game-card-img position-relative" alt="Spribe 7" />
+           
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/hilo.png" className="game-card-img position-relative" alt="Spribe 7" />
+            
+          </div>
+        </div>
+      </div>
+
+       <div className="col-xl-3 col-lg-3 px-1"  >
+        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
+          <div className="game-card p-0 m-0 ">
+            <img src="assets/img/spribe/keno.png" className="game-card-img position-relative" alt="Spribe 7" />
+           
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    {/* Swiper Section */}
+   
+  </div>
+</div>
+{/* spribe games */}
+
+
+{/* spribe games */}
+
+
+{/* deposite way */}
+
+ <div className="newavi deposit-section container my-5 px-0">
+      <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4">
+        {/* Left Content */}
+        <div className="text-content text-white mb-3 mb-md-0">
+          <h3 className="bonus-title">
+            Get up to <span className="highlight">$100 Deposit Bonus</span>
+          </h3>
+          <p className="fw-semibold mb-2">on your first deposit</p>
+          <p className="deposit-text mb-3">
+            We accept many popular deposit methods including cryptocurrencies
+            such as Bitcoin, Ethereum, Solana, USDT, and more!
+          </p>
+          <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
+            Deposit Now
+          </button>
+        </div>
+
+        {/* Right Icons */}
+        <div className="payment-icons d-flex align-items-center gap-2">
+          <img
+            src="assets/img/icons/p1 (6).png"
+            alt="Mastercard"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (5).png"
+            alt="Visa"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (4).png"
+            alt="Bitcoin"
+            className="icon"
+          />
+          <img
+            src="assets/img/icons/p1 (3).png"
+            alt="Ethereum"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (2).png"
+            alt="USDC"
+            className="icon"
+          />
+          <img
+             src="assets/img/icons/p1 (1).png"
+            alt="Tether"
+            className="icon"
+          />
+        </div>
+      </div>
+    </div>
+
+
+
+                      
 
                       <>
             {/* Simulating the Header/Nav Bar from the image */}
          
-            <div className="container-main">
-                {/* --- Main Bonus Section --- */}
-                <section className="bonus-section-main">
-                    <div className="bonus-text-block">
-                        <h6>Welcome Bonus Offer</h6>
-                        <h2>
-                            <span className="d-inline-block">500% BONUS</span> UP TO $90,000 + 100 FREE SPINS
-                        </h2>
-                        <p>
-                            Play with up to $90,000 on your first three deposits
-                        </p>
-                        <a href="#" className="deposit-btn-img">
-                            Deposit Now <i className="fas fa-chevron-right ms-2"></i>
-                        </a>
-                    </div>
-                    
-                    {/* Placeholder for the Attractive Bonus Image */}
-                    <div className="bonus-graphic d-none d-md-block">
-                        <img src="https://picsum.photos/400/300?grayscale&random=3" alt="Graphic of a slot machine with coins" />
-                        <p>path/to/bonus-offer-img.png</p>
-                    </div>
-                </section>
-
-                {/* --- Payment Info Section (Two Cards) --- */}
-                <div className="payment-info-row">
-                    {/* Card 1: Main Payment Value */}
-                    <div className="payment-card payment-card-left">
-                        <h6>Payment Method</h6>
-                        <div className="payment-value">
-                            <i className="fab fa-btc me-2" style={{ color: 'var(--primary-color)' }}></i> $90, NUS
-                        </div>
-                    </div>
-
-                    {/* Card 2: Logos and Currencies */}
-                    <div className="payment-card payment-card-right">
-                        <div className="w-100 mb-3">
-                            <h6>Payment Method (50 nevight mb)</h6>
-                            <div className="payment-icons-container">
-                                <i className="fab fa-cc-visa" title="Visa"></i>
-                                <i className="fab fa-cc-mastercard" title="MasterCard"></i>
-                                <i className="fab fa-cc-jcb" title="JCB"></i>
-                                <i className="fab fa-cc-paypal" title="PayPal"></i>
-                                <i className="fab fa-cc-discover" title="Discover"></i>
-                            </div>
-                        </div>
-                        
-                        <div className="w-100 d-flex justify-content-between align-items-center flex-wrap">
-                            <h6>Accepted Currency</h6>
-                            <div className="currency-icons-container">
-                                <i className="fab fa-btc" title="Bitcoin"></i>
-                                <i className="fab fa-ethereum" title="Ethereum"></i>
-                                <i className="fas fa-yen-sign" title="Yen/JPY"></i>
-                                <i className="fab fa-cc-paypal" title="PayPal"></i>
-                                <i className="fab fa-cc-stripe" title="Stripe/Payment"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* --- Secondary Bonus Cards Section --- */}
-                <div className="section-title">
-                    Like bonuses? <strong>See what TrustDice got for you</strong>
-                </div>
-
-                <div className="bonus-cards-grid">
-                    {/* Card 1: Bitcoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 1</h6>
-                        <div className="card-icon-placeholder">
-                            <i className="fab fa-bitcoin" style={{ color: 'black' }}></i>
-                        </div>
-                        <p>Https: 83C 8% of hestion</p>
-                    </div>
-                    
-                    {/* Card 2: Building/Casino */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 2</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#f7931a' }}>
-                            <i className="fas fa-building" style={{ color: 'white' }}></i>
-                        </div>
-                        <p>Https Fidd on eran Detetige</p>
-                    </div>
-                    
-                    {/* Card 3: Litecoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 3</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#3a80df' }}>
-                            <i className="fas fa-lira-sign" style={{ color: 'white' }}></i>
-                        </div>
-                        <p>Color tictet do get Hoge DOGE</p>
-                    </div>
-                    
-                    {/* Card 4: Dogecoin */}
-                    <div className="bonus-card-small">
-                        <h6>Bonus card 1</h6>
-                        <div className="card-icon-placeholder" style={{ backgroundColor: '#c2a84d' }}>
-                            <i className="fas fa-dog" style={{ color: '#333' }}></i>
-                        </div>
-                        <p>Temsofroum Co be UP I DOGE</p>
-                    </div>
-                </div>
-            </div>
+          
         </>
 
-                      <>
-                        {/* Games Types */}
-                        <div className="mobile-none">
-                          <div className="top-matches-title d-flex align-items-center justify-content-between   my-3">
-                            <div className="d-flex">
-                              <img
-                                src="https://cdn-icons-png.flaticon.com/512/12800/12800987.png"
-                                width="27"
-                                alt="Games Type Icon"
-                              />
-                              <h5 className="m-0 ms-2">Games Type</h5>
-                            </div>
-                            {/* <div>
-                              <a href="./Allgames.html">
-                                <span className="text-white fs-13 fw-500 right_heading">
-                                  All <i className="ri-arrow-right-s-line" />
-                                </span>
-                              </a>
-                            </div> */}
-                          </div>
-                          <div className="d-flex gap-2">
-                            <div className="col-4 ">
-                              <div
-                                className="card bg-cardtrans p-1"
-                                style={{
-                                  backgroundImage:
-                                    "linear-gradient(to left, rgb(255 70 42 / 30%), transparent 75%) !important",
-                                }}
-                              >
-                                <div
-                                  className="flex-column d-flex"
-                                  onClick={() =>
-                                    navigate(`/filtered-games?type=card`)
-                                  }
-                                >
-                                  <span className="text-white fw-500 fs-13  py-2 px-1">
-                                    Casino
-                                  </span>
-                                  <img
-                                    src="assets/img/casino.png"
-                                    alt=""
-                                    srcSet=""
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-4 ">
-                              <div
-                                className="card bg-cardtrans p-1"
-                                style={{
-                                  backgroundImage:
-                                    "linear-gradient(to left, rgb(35 105 157 / 44%), transparent 75%) !important",
-                                }}
-                              >
-                                <div
-                                  className="flex-column d-flex"
-                                  onClick={() =>
-                                    navigate(`/filtered-games?search=instant`)
-                                  }
-                                >
-                                  <span className="text-white fw-500 fs-13  py-2 px-1">
-                                    Instant
-                                  </span>
-                                  <img
-                                    src="assets/img/sports.png"
-                                    alt=""
-                                    srcSet=""
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="col-4 ">
-                              <div className="d-flex  flex-wrap  gap-2">
-                                <div className="w-45 ">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(181 114 28 / 30%), transparent 60%) !important",
-                                    }}
-                                  >
-                                    <div
-                                      className="flex-column d-flex"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?search=lottery`
-                                        )
-                                      }
-                                    >
-                                      <span className="text-white fw-500 fs-13 py-2 px-1">
-                                        Lottery
-                                      </span>
-                                      <img
-                                        src="assets/img/lottery.png
-                  "
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 ">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(123 64 14 / 49%), transparent 75%) !important",
-                                    }}
-                                  >
-                                    <div
-                                      className="flex-column d-flex"
-                                      onClick={() =>
-                                        navigate(`/filtered-games?search=slots`)
-                                      }
-                                    >
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Slot
-                                      </span>
-                                      <img
-                                        src="assets/img/horse.png"
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 pt-2">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(190 191 183 / 27%), transparent 75%) !important",
-                                    }}
-                                    onClick={() =>
-                                      navigate(`/filtered-games?search=dice`)
-                                    }
-                                  >
-                                    <div className="flex-column d-flex">
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Dice
-                                      </span>
-                                      <img
-                                        src="assets/img/up.png"
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="w-45 pt-2">
-                                  <div
-                                    className="card bg-cardtrans p-1"
-                                    style={{
-                                      backgroundImage:
-                                        "linear-gradient(to left, rgb(123 64 14 / 49%), transparent 75%) !important",
-                                    }}
-                                    onClick={() =>
-                                      navigate(`/filtered-games?search=bingo`)
-                                    }
-                                  >
-                                    <div className="flex-column d-flex">
-                                      <span className="text-white fw-500 fs-13  py-2 px-1">
-                                        Bingo
-                                      </span>
-                                      <img
-                                        src="assets/img/bingo.png
-            "
-                                        alt=""
-                                        srcSet=""
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </>
+                   
 
                       {/* games types end */}
                       {/* games types end */}
@@ -1831,162 +1577,7 @@ function Home() {
                       {/* game list Ends */}
 
                       {/* {{base_url}}/jiboomba/all-games?type=dice */}
-                      {/* all games part */}
-                      <div>
-                        {/* All Games Section Header */}
-                        <div className="top-matches-title d-flex align-items-center justify-content-between my-3">
-                          <div className="d-flex">
-                            {isLoadingGames ? (
-                              // Skeleton for the dot icon
-                              <Skeleton
-                                circle
-                                height={20}
-                                width={20}
-                                className="dot"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <span className="dot" />
-                            )}
-                            {isLoadingGames ? (
-                              // Skeleton for the title text
-                              <Skeleton
-                                height={20}
-                                width={120}
-                                className="ms-2"
-                                baseColor="#313131" // Darker grey for the base
-                                highlightColor="#525252"
-                              />
-                            ) : (
-                              <h5 className="m-0 ms-2">All Games</h5>
-                            )}
-                          </div>
-                          <div>
-                            {/* The "All" link typically remains visible even during loading */}
-                            <Link to={routes.games.all}>
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Apply SkeletonTheme for consistent styling of all skeletons in this section */}
-                        <SkeletonTheme
-                          baseColor="#313131"
-                          highlightColor="#525252"
-                        >
-                          {isLoadingGames ? (
-                            // --- Skeleton loading state for the Swiper carousel ---
-                            <swiper-container
-                              className="mySwiper"
-                              space-between="5"
-                              // We can disable autoplay for skeletons, or keep it for the animation feel
-                              loop="true" // Loop might not be necessary for skeletons if you're only showing a few
-                              autoplay='{"delay": 0, "disableOnInteraction": false}' // Keep for visual consistency
-                              speed="2500"
-                              slides-per-view="2.5"
-                              centered-slides="false"
-                              free-mode="true"
-                            >
-                              {/* Render 4 skeleton slides to adequately fill the view */}
-                              {Array.from({ length: 4 }).map((_, index) => (
-                                <SwiperSlide key={index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr p-1">
-                                    <Skeleton
-                                      height={130}
-                                      borderRadius={10}
-                                      baseColor="#313131"
-                                      highlightColor="#525252"
-                                    />
-                                    <div className="mt-2 px-1">
-                                      <Skeleton
-                                        height={12}
-                                        width={`100%`}
-                                        baseColor="#313131"
-                                        highlightColor="#525252"
-                                      />
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))}
-                            </swiper-container>
-                          ) : (
-                            // --- Actual game content once loaded ---
-                            <swiper-container
-                              className="mySwiper"
-                              space-between="5"
-                              autoplay='{"delay": 0, "disableOnInteraction": false}'
-                              slides-per-view="2.5"
-                              centered-slides="false"
-                              free-mode="true"
-                              loop={true}
-                              speed={3000}
-                              slidesPerView={2}
-                              freeMode={true}
-                              breakpoints={{
-                                768: {
-                                  slidesPerView: 6, // Tablet view
-                                },
-                                1024: {
-                                  slidesPerView: 7, // Laptop/Desktop view
-                                },
-                              }}
-                            >
-                              {/* Map over your actual game data to render the slides */}
-                              {allGamesData.map((game, index) => (
-                                <swiper-slide key={index}>
-                                  {game.linkTo ? (
-                                    // Use Link component if a direct route is specified
-                                    <Link
-                                      to={game.linkTo}
-                                      className="game-card-wrapper"
-                                    >
-                                      <div className="game-card">
-                                        <img
-                                          src={game.imgSrc}
-                                          className="game-card-img"
-                                          alt={`Game ${game.type}`}
-                                        />
-                                      </div>
-                                      <div className="game-play-button d-flex flex-column">
-                                        <div className="btn-play">
-                                          <i className="fa-solid fa-play"></i>
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  ) : (
-                                    // Use onClick with navigate for dynamic filtered routes
-                                    <div
-                                      className="game-card-wrapper"
-                                      onClick={() =>
-                                        navigate(
-                                          `/filtered-games?type=${game.type}`
-                                        )
-                                      }
-                                    >
-                                      <div className="game-card">
-                                        <img
-                                          src={game.imgSrc}
-                                          className="game-card-img"
-                                          alt={`Game ${game.type}`}
-                                        />
-                                      </div>
-                                      <div className="game-play-button">
-                                        <div className="btn-play">
-                                          <i className="fa-solid fa-play"></i>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  )}
-                                </swiper-slide>
-                              ))}
-                            </swiper-container>
-                          )}
-                        </SkeletonTheme>
-                      </div>
-                      {/* all games */}
+             
 
                       {/* Marquee runing test */}
 
@@ -1994,125 +1585,7 @@ function Home() {
 
                       {/* Dice of games all filer */}
 
-                      {/* Slot Gaming */}
-                      <SkeletonTheme
-                        baseColor="#313131"
-                        highlightColor="#525252"
-                      >
-                        {/* SLOT GAMES */}
-                        <div>
-                          <div className="top-matches-title d-flex align-items-center justify-content-between my-3">
-                            <div className="d-flex">
-                              <span className="dot" />
-                              <h5 className="m-0 ms-2 d-flex align-items-center">
-                                Slot Games
-                              </h5>
-                            </div>
-                            <div
-                              onClick={() =>
-                                navigate(`/filtered-games?type=slots`)
-                              }
-                            >
-                              {/* <Link to={routes.games.all}> */}
-                              <span className="text-white fs-13 fw-500 right_heading">
-                                All <i className="ri-arrow-right-s-line" />
-                              </span>
-                              {/* </Link> */}
-                            </div>
-                          </div>
-
-                          {/* Swiper for Slot Games */}
-                          <Swiper
-                            className="mySwiper"
-                            modules={[Autoplay, FreeMode]}
-                            spaceBetween={5}
-                            loop={true}
-                            autoplay={{ delay: 0, disableOnInteraction: false }}
-                            speed={3000}
-                            slidesPerView={2}
-                            freeMode={true}
-                            breakpoints={{
-                              768: {
-                                slidesPerView: 5, // Tablet view
-                              },
-                              1024: {
-                                slidesPerView: 7, // Laptop/Desktop view
-                              },
-                            }}
-                          >
-                            {isLoadingSmartSoftGames ? (
-                              // Skeleton loader
-                              Array.from({ length: 4 }).map((_, index) => (
-                                <SwiperSlide key={index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr p-1">
-                                    <Skeleton height={130} borderRadius={10} />
-                                    <div className="mt-2 px-1">
-                                      <Skeleton height={12} width="100%" />
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : isErrorSmartSoft ? (
-                              // Error message
-                              <div className="d-flex flex-column align-items-center mt-5 w-100">
-                                <p className="text-white text-center">
-                                  Error loading slot games:{" "}
-                                  {errorSmartSoft.message}
-                                </p>
-                              </div>
-                            ) : smartSoftGames.length > 0 ? (
-                              // Game cards
-                              smartSoftGames.map((game, index) => (
-                                <SwiperSlide key={game.uuid || index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr">
-                                    <div className="game-card p-0 m-0 p-1">
-                                      <img
-                                        src={
-                                          game.image
-                                            ? game.image
-                                            : "assets/img/play_now.png"
-                                        }
-                                        className="game-card-img"
-                                        alt={game.name}
-                                      />
-                                      <div className="btn-play position-absolute top-50 start-50 translate-middle">
-                                        <i className="fa-solid fa-play"></i>
-                                      </div>
-                                      {/* <div className="d-flex flex-column text-white text-center py-2 px-1">
-                              <span className="fs-12 fw-bold text-truncate">
-                                {game.name}
-                              </span>
-                              <span className="fs-10">Duel</span>
-                            </div> */}
-                                    </div>
-                                    <div className="game-play-button d-flex flex-column">
-                                      <div
-                                        className="btn-play"
-                                        onClick={() => handleGameClick(game)}
-                                      >
-                                        <i className="fa-solid fa-play"></i>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : (
-                              // No games message
-                              <div className="d-flex flex-column align-items-center mt-5 w-100">
-                                <img
-                                  src="assets/img/notification/img_2.png"
-                                  alt="unauth"
-                                  className="w-25"
-                                />
-                                <p className="text-white text-center">
-                                  No slot games available
-                                </p>
-                              </div>
-                            )}
-                          </Swiper>
-                        </div>
-                      </SkeletonTheme>
-
+                     
                       {/* slot game end */}
 
                       {/* Provider running list starts*/}
@@ -2257,7 +1730,7 @@ function Home() {
                       {/*---bonus------*/}
                       <div>
                         <div className="">
-                          <div className="top-matches-title d-flex align-items-center gap-2  my-3 justify-content-between">
+                          <div className="top-matches-title d-flex align-items-center gap-2  my-4 justify-content-between">
                             <div className="d-flex align-items-center">
                               <img
                                 src="assets/img/coin.png"
@@ -2276,75 +1749,241 @@ function Home() {
                             </Link>
                           </div>
 
-                          <div className="row px-0">
-                            <div className="col-lg-6 mb-3">
-                              <div className="bouns_sec">
-                                <div className="card bonus_card">
-                                  <div className="card-body p-0">
-                                    <div className="bonus_card_sec">
-                                      {/* Top section with text and image */}
-                                      <div className="bonus_sec_top p-4 py-2">
-                                        <div className="bonus_sec_content">
-                                          <span>Casino</span>
-                                          <span className="text-shadow">
-                                            <p>100% Crash Power Bonus</p>
-                                          </span>
-                                        </div>
-                                      </div>
-                                      {/* Bottom section with timer and buttons */}
-                                      <div className="bonusBlock_other__bottom p-2">
-                                        <div className="timer_block_container d-flex align-items-center">
-                                          {/* Action buttons */}
-                                          <div className="bonus_bottom_btn red_clr w-100">
-                                            <button className="btn btn-red w-100">
-                                              Get bonus
-                                            </button>
-                                            <button className="btn btn-outline-light w-100">
-                                              Details
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                          <div className="row">
+                              <div className="col-lg-4">
+    <div className="bouns_sec mb-3 h-100">
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div
+            className="bonus_card_sec"
+            style={{
+              background:
+                "linear-gradient( 205deg,  rgba(122,0,0,1) 32%, rgba(217,42,42,1) 74.4% )"
+            }}
 
-                            <div className="col-lg-6">
-                              <div className="bouns_sec ">
-                                <div className="card bonus_card">
-                                  <div className="card-body p-0">
-                                    <div className="bonus_card_sec">
-                                      {/* Top section with text and image */}
-                                      <div className="bonus_sec_top p-4 py-2">
-                                        <div className="bonus_sec_content">
-                                          <span>Casino</span>
-                                          <span className="text-shadow">
-                                            <p>75% Crash Power Bonus</p>
-                                          </span>
-                                        </div>
-                                      </div>
-                                      {/* Bottom section with timer and buttons */}
-                                      <div className="bonusBlock_other__bottom p-2">
-                                        <div className="timer_block_container d-flex align-items-center">
-                                          {/* Action buttons */}
-                                          <div className="bonus_bottom_btn red_clr w-100">
-                                            <button className="btn btn-red w-100">
-                                              Get bonus
-                                            </button>
-                                            <button className="btn btn-outline-light w-100">
-                                              Details
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+          
+          >
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>100% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="w-75 rounded"
+                  src="https://upload.4rabet6.com/storage/263963/PNG_PlayTech---Lucky-Rush-2.png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-4">
+    <div className="bouns_sec mb-3"  >
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div className="bonus_card_sec"  style={{
+  background:
+    "linear-gradient(238.08deg, rgb(22, 123, 245) 0%, rgb(17, 99, 208) 33%, rgb(8, 62, 155) 65%, rgb(1, 32, 110) 100%)",
+}}
+>
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>75% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="img-fluid rounded"
+                  src="https://upload.4rabet4.com/storage/239257/PNG_75-Crash-Power-Bonus-(1)-1-(1).png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-4">
+    <div className="bouns_sec mb-3 h-100">
+      <div className="card bonus_card">
+        <div className="card-body p-0">
+          <div
+            className="bonus_card_sec"
+          style={{
+  backgroundImage:
+    "linear-gradient(120deg, rgb(125 81 41) 0%, rgb(165 118 24) 100%)",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+}}
+
+
+          >
+            <div className="bonus_sec_top p-4 py-2">
+              <div className="bonus_sec_content">
+                <span>Casino</span>
+                <span className="text-shadow">
+                  <p>100% Crash</p>
+                  <p>Power Bonus</p>
+                </span>
+              </div>
+              <div className="bonus_sec_img">
+                <img
+                  alt="img"
+                  className="img-fluid rounded"
+                  src="https://upload.4rabet4.com/storage/235234/PNG-(6).png"
+                />
+              </div>
+            </div>
+            <div className="bonusBlock_other__bottom p-2">
+              <div className="timer_block_container">
+                <div className="timer_block_inner d-flex align-items-center justify-content-center">
+                  <div
+                    className="timer_block_countdown"
+                    style={{ maxWidth: 300 }}
+                  >
+                    <div className="countdown_timer d-flex align-items-center justify-content-evenly">
+                      <div className="timer-block_days">
+                        <div className="countdown_value" id="days">
+                          3
+                        </div>
+                        <div className="countdown_label">Days</div>
+                      </div>
+                      <div className="timer-block_hours">
+                        <div className="countdown_value" id="hours">
+                          12
+                        </div>
+                        <div className="countdown_label">Hours</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_minutes">
+                        <div className="countdown_value" id="minutes">
+                          31
+                        </div>
+                        <div className="countdown_label">Mins</div>
+                      </div>
+                      <div className="separator">:</div>
+                      <div className="timer-block_seconds">
+                        <div className="countdown_value" id="seconds">
+                          33
+                        </div>
+                        <div className="countdown_label">Secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bonus_bottom_btn">
+                <button className="btn btn-red w-100">Get bonus</button>
+                <button className="btn btn-outline-light w-100">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* ekgoeih */}
+
+
+</div>
+
                         </div>
                       </div>
 
@@ -2357,6 +1996,7 @@ function Home() {
                     </section>
 
                     {/* Footer Start */}
+                    
 
                     <Footer />
                     {/* {!showFullScreenGame && <Footer />} */}

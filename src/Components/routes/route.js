@@ -91,6 +91,9 @@ const routes = {
   },
   pages: {
     privacyPolicy: "/privacy-policy",
+    securityPolicy: "/security-policy",
+    Faq: "/faq",
+    LegalDisclaimer: "/legal-disclaimer",
     terms: "/terms-condition",
     howToPlay: "/how-to-play",
     referEarn: "/refer-earn",
