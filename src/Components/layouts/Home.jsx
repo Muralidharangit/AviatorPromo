@@ -1988,7 +1988,7 @@ function Home() {
                       </div>
                       {/* all games */}
 
-                      {/* Marquee runing */}
+                      {/* Marquee runing test */}
 
                       {/* Marquee end */}
 
