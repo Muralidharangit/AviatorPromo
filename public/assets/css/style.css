@@ -2099,7 +2099,7 @@ li.nav-item button {
 
 /* Navbar */
 .navbar {
- background: var(--card-bg);
+ /* background: var(--card-bg); */
   transition: background 0.25s ease;
   -webkit-transition: background 0.25s ease;
   -moz-transition: background 0.25s ease;
@@ -2107,6 +2107,7 @@ li.nav-item button {
   /* border-bottom: 1px solid #cccccc21;
   border-left: 1px solid #cccccc21; */
   /* z-index:99999; */
+  border: 1px solid;
 }
 
 .navbar .navbar-brand {
@@ -7307,6 +7308,7 @@ background: var(--card-bg);
   background-color: #1e1e22;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #e5bf7ca1;
 }
 
 .newavi
@@ -7455,3 +7457,47 @@ background: var(--card-bg);
     padding: 9px 10px;
     margin-bottom: 15px !important;
 }
+
+.session-multiplier.session-green.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #067f21;
+    color: white;
+}
+.session-multiplier.session-red.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #ef143c;
+    color: white;
+}
+
+/* viloet:#913ef8
+
+pink:#c017b4
+
+blue:#34b4ff */
+
+
+
+
+.session-multiplier.session-blue.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #34b4ff;
+    color: white;
+}
+
+.session-multiplier.session-pink.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #c017b4;
+    color: white;
+}
+
+.session-multiplier.session-violet.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #913ef8;
+    color: white;
+}
+
+.session-multiplier.session-green.p-2.rounded.text-center.fw-bold.w-100 {
+    background: #067f21;
+    color: white;
+    padding: 0 !important;
+    line-height: 22px;
+    padding: 6px !important;
+    line-height: 17px;
+    border: 1px solid #00e34e;
+}
+
