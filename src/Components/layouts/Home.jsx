@@ -1031,9 +1031,9 @@ function Home() {
                               }
                             >
                              
-                              <span className="text-white fs-13 fw-500 right_heading">
+                              {/* <span className="text-white fs-13 fw-500 right_heading">
                                 All <i className="ri-arrow-right-s-line" />
-                              </span>
+                              </span> */}
                              
                             </div>
                           </div>
@@ -1285,9 +1285,9 @@ function Home() {
       </div>
 
       <div onClick={() => navigate(`/filtered-games?type=spribe`)}>
-        <span className="text-white fs-13 fw-500 right_heading">
+        {/* <span className="text-white fs-13 fw-500 right_heading">
           All <i className="ri-arrow-right-s-line" />
-        </span>
+        </span> */}
       </div>
     </div>
 
@@ -1300,61 +1300,129 @@ function Home() {
    
     
     {/* Left Content */}
-    <div className="text-content text-white mb-3 mb-md-0 ">
+    <div className="text-content text-white mb-3 mb-md-0 w-100">
     
       <h3 className="bonus-title">
-        Spribe Games <span className="highlight"> Deposit Bonus</span>
+        Spribe Games 
       </h3>
-      <p className="fw-semibold mb-2">on your first deposit</p>
+    <p className="fw-semibold mb-3 text-white-75">
+  Unlock the thrill of Aviator, Plinko, and more! Get an exclusive deposit match
+  to boost your play across all Spribe's exhilarating turbo games.
+</p>
       
       {/* ... (rest of your content) ... */}
       
       <div className="w-100 d-flex justify-content-end">
-        <div className="w-75">
-          <div className="deposit-text mb-3 gametypes text-end " >
+        <div className="w-100">
+          <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
 
-            
-            <span className="fs-14">All Players </span>
-            <h3 className="fs-16">Spribe Games :: 99999999</h3>
+            <div className="d-flex align-items-center px-2">
+              <div class="col-6 session-row-col px-1">
+                <div class="text-start session-label session-normal p-2 rounded w-100">
+                    <i class="fas fa-plane-departure text-danger me-2"></i>
+                    <span class="fw-bold">#680 747</span>
+                    <p class="m-0 small text-white-50">ESG 900100</p>
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-pink p-2 rounded text-center fw-bold w-100">
+                    x 50.25
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-pink p-2 rounded text-center fw-bold w-100">
+                    x 10.25
+                </div>
+            </div>
+            </div>
           </div>
-          <div className="deposit-text mb-3 gametypes text-end position-relative" >
-               <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
-     >
-        
-        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
-        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
-    </div> 
-            <span className="fs-14">Top Rated Games</span>
-            <h3 className="fs-16">Games :: Aviator</h3>
-          </div>
-          <div className="deposit-text mb-3 gametypes text-end position-relative" >
+            <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
 
-             <div className="card-badges position-absolute top-0 start-0 d-flex flex-column p-2" 
-     >
+            <div className="d-flex align-items-center px-2">
+              <div class="col-6 session-row-col px-1">
+                <div class="text-start session-label session-normal p-2 rounded w-100">
+                    <i class="fas fa-plane-departure text-danger me-2"></i>
+                    <span class="fw-bold">#680 747</span>
+                    <p class="m-0 small text-white-50">ESG 900100</p>
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-violet p-2 rounded text-center fw-bold w-100">
+                    x 9.25
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-violet p-2 rounded text-center fw-bold w-100">
+                    x 6.25
+                </div>
+            </div>
+            </div>
+          </div>
+            <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
+
+            <div className="d-flex align-items-center px-2">
+              <div class="col-6 session-row-col px-1">
+                <div class="text-start session-label session-normal p-2 rounded w-100">
+                    <i class="fas fa-plane-departure text-danger me-2"></i>
+                    <span class="fw-bold">#680 747</span>
+                    <p class="m-0 small text-white-50">ESG 900100</p>
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-blue p-2 rounded text-center fw-bold w-100">
+                    x 1.58
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-blue p-2 rounded text-center fw-bold w-100">
+                    x 1.30
+                </div>
+            </div>
+            </div>
+          </div>
+            <div className=" p-0 w-100" >
+
+            <div className="d-flex align-items-center px-2">
+            <div class="col-12 session-row-col px-1">
+               <div className="row justify-content-center">
+                <div className="col-5">
+                    <div class="session-multiplier session-green p-2 rounded text-center fw-bold w-100">
+                    <div className="d-flex flex-column">
+                    <span>Bet </span>
+                    <span>1.00 USD</span>
+                    </div>
+                   
+                </div>
+                </div>
+                 <div className="col-5">
+                    <div class="session-multiplier session-green p-2 rounded text-center fw-bold w-100">
+                       <div className="d-flex flex-column">
+                    <span>Bet </span>
+                    <span>1.00 USD</span>
+                    </div>
+                   
+                </div>
+                </div>
+               </div>
+            </div>
+          
+            </div>
+          </div>
+         
         
-        <span className="badge  fw-bold mb-1" style={{ fontSize: '0.8rem' , background:"#e20538 ", color:"white" }}>🔥 OFFER %%</span>
-        {/* <span className="badge text-bg-danger fw-bold" style={{ fontSize: '0.8rem' }}>⏰ LIMITED TIME</span> */}
-    </div> 
-            <span className="fs-14">Bonus upto</span>
-            <h3 className="fs-16">Amounts :: 100%</h3>
-          </div>
-          <div className="deposit-text mb-3 gametypes text-end" >
-            <span className="fs-14">Bonus upto</span>
-            <h3 className="fs-16">Amounts :: 100%</h3>
-          </div>
         </div>
       </div>
       
-      <div className="d-flex justify-content-end position-relative">
+      {/* <div className="d-flex justify-content-end position-relative">
         <div>
           <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
             Deposit Now
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Plane Image */}
-      <div 
+      {/* <div 
         className="position-absolute" 
         style={{
           bottom: '0%', 
@@ -1363,7 +1431,7 @@ function Home() {
         }}
       >
         <img src="https://ifrd.4rabet6.com/img/main/red-plane.png" alt="" srcset="" className="w-100 right-0 top-0"/>
-      </div>
+      </div> */}
     </div>
 
     {/* Right Icons - Originally empty, now ensuring content aligns correctly */}
@@ -1742,9 +1810,9 @@ function Home() {
                             </div>
                             <Link to="/bonus">
                               <div>
-                                <span className="text-white fs-13 fw-500 right_heading">
+                                {/* <span className="text-white fs-13 fw-500 right_heading">
                                   All <i className="ri-arrow-right-s-line" />
-                                </span>
+                                </span> */}
                               </div>
                             </Link>
                           </div>
