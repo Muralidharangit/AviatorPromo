@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spribe Heat Banner</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --red: #ff2d2d;
+      --gold: #ffcb3c;
+      --dark: #0d0d0d;
+      --neon-red: rgba(255, 40, 40, 0.6);
+      --glass-bg: rgba(255,255,255,0.07);
+      --grey: #b5b5b5;
+    }
+
+    /*************************************
+        NEW MODERN WRAPPER
+    *************************************/
+    .heatBanner2025 {
+      background: linear-gradient(135deg, #0a0a0a, #1b0000);
+      padding: 110px 0;
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Neon floating glow circles */
+    .heatBanner2025::before,
+    .heatBanner2025::after {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--neon-red), transparent);
+      filter: blur(120px);
+      opacity: 0.6;
+      animation: pulseGlow 6s infinite alternate;
+    }
+
+    .heatBanner2025::before {
+      top: -200px;
+      left: -150px;
+    }
+
+    .heatBanner2025::after {
+      bottom: -220px;
+      right: -180px;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1); opacity: 0.35; }
+      100% { transform: scale(1.3); opacity: 0.65; }
+    }
+
+    /*************************************
+         NEW BADGE
+    *************************************/
+    .badge2025 {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--glass-bg);
+      padding: 8px 22px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 20px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .badge2025 i {
+      color: var(--gold);
+    }
+
+    /*************************************
+         TYPOGRAPHY
+    *************************************/
+    .subTitle2025 {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 20px;
+      opacity: 0.6;
+    }
+
+    .mainTitle2025 {
+      font-size: 74px;
+      font-weight: 900;
+      line-height: 1;
+      margin: 18px 0 25px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .mainTitle2025 span {
+      color: transparent;
+      -webkit-text-stroke: 2px #ffffff;
+      position: relative;
+    }
+
+    .mainTitle2025 span::after {
+      content: attr(data-fill);
+      color: #5b5454;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      overflow: hidden;
+      border-right: 3px solid var(--gold);
+      animation: reveal 4s infinite alternate ease;
+      white-space: nowrap;
+    }
+
+    @keyframes reveal {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    .desc2025 {
+      font-size: 19px;
+      max-width: 480px;
+      opacity: 0.8;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    /*************************************
+        BUTTONS
+    *************************************/
+    .btnGroup2025 {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btnHeat {
+      padding: 16px 38px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 46px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--red), #a60000);
+      /* box-shadow: 0 0 15px rgba(255, 40, 40, 0.6); */
+      transition: 0.3s;
+    }
+
+    .btnHeat:hover {
+      box-shadow: 0 0 25px rgba(255, 40, 40, 1);
+      transform: translateY(-3px);
+    }
+
+    .btnOutline {
+      padding: 16px 38px;
+      border-radius: 62px;
+      border: 2px solid var(--red);
+      background: transparent;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .btnOutline:hover {
+      background: var(--red);
+      color: #fff;
+    }
+
+    /*************************************
+         IMAGE FLOAT ANIMATION
+    *************************************/
+    .bannerImg2025 {
+      max-width: 100%;
+      animation: floating 4s ease-in-out infinite;
+      filter: drop-shadow(0 30px 35px rgba(0,0,0,0.8));
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+      100% { transform: translateY(0); }
+    }
+
+    /*************************************
+        RESPONSIVE
+    *************************************/
+    @media (max-width: 991px) {
+      .mainTitle2025 { font-size: 50px; text-align: center; }
+      .desc2025 { text-align: center; margin: 0 auto 30px; }
+      .badge2025 { margin: 0 auto; }
+      .subTitle2025 { text-align: center; }
+      .btnGroup2025 { justify-content: center; }
+      .heatBanner2025 { padding: 70px 0; }
+    }
+
+    @media (max-width: 576px) {
+      .btnGroup2025 { flex-direction: column; }
+      .btnHeat, .btnOutline { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="heatBanner2025">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+
+        <div class="badge2025">
+          <i class="fa-solid fa-fire"></i> Official Partner
+        </div>
+
+        <div class="subTitle2025">Spribe Originals</div>
+
+        <h1 class="mainTitle2025">
+          Fly High <br>
+          <span data-fill="Win Big!">Win Big!</span>
+        </h1>
+
+        <p class="desc2025">
+          Experience the heat of ultimate multipliers. Cash out at the right moment and take home massive rewards.
+        </p>
+
+        <div class="btnGroup2025">
+          <button class="btnHeat">Play Now</button>
+          <button class="btnOutline">How It Works</button>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="../../../public/assets/img/slider/banner1.png" class="bannerImg2025" alt="Promo Image">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

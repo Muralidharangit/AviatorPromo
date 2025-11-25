@@ -861,7 +861,21 @@ function Home() {
                   <FullPageLoader message="" />
                 ) : (
                   <>
+
+                  
                     <section className="container vh-100  py-2">
+
+                     <div className="banner">
+
+
+
+                     
+                     </div>
+
+
+
+
+
                       {/* home start */}
                       {/*----banner-slider----*/}
                       <SkeletonTheme
@@ -869,7 +883,7 @@ function Home() {
                         highlightColor="#525252"
                       >
                         {/*----banner-slider----*/}
-                        <div className="position-relative my-2">
+                        <div className="position-relative main-ban my-2">
                           {" "}
                           {/* Added my-3 for spacing, adjust as needed */}
                           {isLoadingBanner ? (
@@ -905,7 +919,7 @@ function Home() {
                               >
                                 <img
                                   src="assets/img/slider/bn1.png"
-                                  className="w-100 rounded-2"
+                                  className="w-100 rounded-2 main-ban"
                                   alt="Gaming Banner Slide 6"
                                 />
                               </SwiperSlide>
@@ -1038,75 +1052,69 @@ function Home() {
                             </div>
                           </div>
 
-                         
-                          <Swiper
-                            className="mySwiper"
-                            modules={[Autoplay, FreeMode]}
-                            spaceBetween={5}
-                            loop={true}
-                            autoplay={{ delay: 0, disableOnInteraction: false }}
-                            speed={3000}
-                            slidesPerView={2}
-                            freeMode={true}
-                            breakpoints={{
-                              768: {
-                                slidesPerView: 5, 
-                              },
-                              1024: {
-                                slidesPerView: 6, 
-                              },
-                            }}
-                          >
-                            {isLoadingDiceGame ? ( 
-                              Array.from({ length: 4 }).map((_, index) => (
-                                <SwiperSlide key={index}>
-                                  <div className="game-card-wrapper rounded-2 new-cardclr p-1">
-                                    <Skeleton height={100} borderRadius={10} />
-                                    <div className="mt-2 px-1">
-                                      <Skeleton height={12} width={`100%`} />
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : diceGames.length > 0 ? (
-                              diceGames.map((game, index) => (
-                                <SwiperSlide key={game.uuid || index}>
-                                  <div
-                                    className="game-card-wrapper rounded-2 new-cardclr"
-                                    onClick={() => handleGameClick(game)}
-                                  >
-                                    <div className="game-card p-0 m-0 p-1 ">
-                                      <img
-                                        // src={
-                                        //   game.image
-                                        //     ? game.image
-                                        //     : "assets/img/play_now.png"
-                                        // }
+                      <Swiper
+  className="mySwiper"
+  modules={[Autoplay, FreeMode]}
+  spaceBetween={5}
+  loop={true}
+  autoplay={{ delay: 0, disableOnInteraction: false }}
+  speed={3000}
+  slidesPerView={2}
+  freeMode={true}
+  breakpoints={{
+    768: { slidesPerView: 5 },
+    1024: { slidesPerView: 6 },
+  }}
+>
+  {isLoadingDiceGame ? (
+    Array.from({ length: 4 }).map((_, index) => (
+      <SwiperSlide key={index}>
+        <div className="media-card p-1">
+          <Skeleton height={100} borderRadius={12} />
+          <div className="mt-2 px-1">
+            <Skeleton height={12} width="100%" />
+          </div>
+        </div>
+      </SwiperSlide>
+    ))
+  ) : diceGames.length > 0 ? (
+    diceGames.map((game, index) => (
+      <SwiperSlide key={game.uuid || index}>
+        <div className="media-card" onClick={() => handleGameClick(game)}>
+          
+          {/* IMAGE */}
+          <img
+            src={getLocalImage(game.name)}
+            alt={game.name}
+          />
 
-                                        src={getLocalImage(game.name)}
-                                        className="game-card-img position-relative"
-                                        alt={game.name}
-                                      />
-                                      <div className="btn-play position-absolute top-50 start-50 translate-middle">
-                                        <i className="fa-solid fa-play"></i>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </SwiperSlide>
-                              ))
-                            ) : (
-                              <div className="d-flex flex-column align-items-center mt-5">
-                                <img
-                                  src="assets/img/notification/img_2.png"
-                                  alt="unauth"
-                                  className="w-25"
-                                />
-                                <p className="text-white text-center">
-                                  No dice games available
-                                </p>
-                              </div>
-                            )}
-                          </Swiper>
+          {/* STAR BUTTON */}
+          <button className="star-btn">
+            <i className="fa-solid fa-star"></i>
+          </button>
+
+          {/* PLAY BUTTON OVERLAY */}
+          <div className="media-overlay">
+            <button className="play-btn">
+              <img src="assets/img/mx.png" alt="play" />
+            </button>
+          </div>
+
+        </div>
+      </SwiperSlide>
+    ))
+  ) : (
+    <div className="d-flex flex-column align-items-center mt-5">
+      <img
+        src="assets/img/notification/img_2.png"
+        alt="unauth"
+        className="w-25"
+      />
+      <p className="text-white text-center">No dice games available</p>
+    </div>
+  )}
+</Swiper>
+
 
                           
 
@@ -1292,7 +1300,7 @@ function Home() {
     </div>
 
     <div className="row">
-      <div className="col-md-4">
+      <div className="col-xl-4">
      <div className="newavi deposit-section container px-0 position-relative">
   <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4 position-relative overflow-hidden">
     
@@ -1313,7 +1321,7 @@ function Home() {
       {/* ... (rest of your content) ... */}
       
       <div className="w-100 d-flex justify-content-end">
-        <div className="w-100">
+        <div className="w-100 w-100 d-flex flex-column align-items-center justify-content-center">
           <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
 
             <div className="d-flex align-items-center px-2">
@@ -1336,7 +1344,29 @@ function Home() {
             </div>
             </div>
           </div>
-            <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
+          <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
+
+            <div className="d-flex align-items-center px-2">
+              <div class="col-6 session-row-col px-1">
+                <div class="text-start session-label session-normal p-2 rounded w-100">
+                    <i class="fas fa-plane-departure text-danger me-2"></i>
+                    <span class="fw-bold">#680 747</span>
+                    <p class="m-0 small text-white-50">ESG 900100</p>
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-violet p-2 rounded text-center fw-bold w-100">
+                    x 40.25
+                </div>
+            </div>
+            <div class="col-3 session-row-col px-1">
+                <div class="session-multiplier session-violet p-2 rounded text-center fw-bold w-100">
+                    x 75.25
+                </div>
+            </div>
+            </div>
+          </div>
+          <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
 
             <div className="d-flex align-items-center px-2">
               <div class="col-6 session-row-col px-1">
@@ -1358,7 +1388,7 @@ function Home() {
             </div>
             </div>
           </div>
-            <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
+          <div className="deposit-text mb-3 gametypes text-end p-0 w-100" >
 
             <div className="d-flex align-items-center px-2">
               <div class="col-6 session-row-col px-1">
@@ -1380,7 +1410,7 @@ function Home() {
             </div>
             </div>
           </div>
-            <div className=" p-0 w-100" >
+          <div className=" p-0 w-100" >
 
             <div className="d-flex align-items-center px-2">
             <div class="col-12 session-row-col px-1">
@@ -1442,102 +1472,165 @@ function Home() {
 </div>
 
       </div>
-       <div className="col-md-8">
+       <div className="col-xl-8">
+  <div className="row gy-3">
 
-        
-      
+    {/* CARD 1 */}
+    <div className="col-xl-3 col-lg-3 col-md-3  px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe1')}>
+        <img src="/assets/img/spribe/aviator.png" alt="Spribe 1" />
 
-         <div className="row gy-3">
-     {/* Static Spribe Slides */}
-      <div   className="col-xl-3 col-lg-3 px-1" >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe1')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="/assets/img/spribe/aviator.png" className="game-card-img position-relative" alt="Spribe 1" />
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
 
-            {/* UPDATED PLAY BUTTON: Icon replaced with text and new class */}
-         
-          </div>
-        </div>
-      </div>
-
-      <div  className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe2')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/dice.png" className="game-card-img position-relative" alt="Spribe 2" />
-            {/* UPDATED PLAY BUTTON */}
-          
-          </div>
-        </div>
-      </div>
-
-      <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe3')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/goal.png" className="game-card-img position-relative" alt="Spribe 3" />
-            {/* UPDATED PLAY BUTTON */}
-           
-          </div>
-        </div>
-      </div>
-
-      {/* ... Add the new PLAY text to all remaining SwiperSlides ... */}
-      
-      {/* Example of the rest of the slides updated: */}
-      <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe4')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/plinko.png" className="game-card-img position-relative" alt="Spribe 4" />
-            
-          </div>
-        </div>
-      </div>
-
-       <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe5')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/miniroulette.png" className="game-card-img position-relative" alt="Spribe 5" />
-           
-          </div>
-        </div>
-      </div>
-
-       <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe6')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/mines.png" className="game-card-img position-relative" alt="Spribe 6" />
-           
-          </div>
-        </div>
-      </div>
-
-      <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/hotline.png" className="game-card-img position-relative" alt="Spribe 7" />
-           
-          </div>
-        </div>
-      </div>
-
-       <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/hilo.png" className="game-card-img position-relative" alt="Spribe 7" />
-            
-          </div>
-        </div>
-      </div>
-
-       <div className="col-xl-3 col-lg-3 px-1"  >
-        <div className="game-card-wrapper rounded-2 new-cardclr" onClick={() => handleGameClick('spribe7')}>
-          <div className="game-card p-0 m-0 ">
-            <img src="assets/img/spribe/keno.png" className="game-card-img position-relative" alt="Spribe 7" />
-           
-          </div>
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
         </div>
       </div>
     </div>
+
+    {/* CARD 2 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe2')}>
+        <img src="assets/img/spribe/dice.png" alt="Spribe 2" />
+        
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
       </div>
+    </div>
+
+    {/* CARD 3 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe3')}>
+        <img src="assets/img/spribe/goal.png" alt="Spribe 3" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 4 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe4')}>
+        <img src="assets/img/spribe/plinko.png" alt="Spribe 4" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 5 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe5')}>
+        <img src="assets/img/spribe/miniroulette.png" alt="Spribe 5" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 6 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe6')}>
+        <img src="assets/img/spribe/mines.png" alt="Spribe 6" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 7 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe7')}>
+        <img src="assets/img/spribe/hotline.png" alt="Spribe 7" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 8 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe8')}>
+        <img src="assets/img/spribe/hilo.png" alt="Spribe 8" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 9 */}
+    <div className="col-xl-3 col-lg-3 col-md-3 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe9')}>
+        <img src="assets/img/spribe/keno.png" alt="Spribe 9" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
     </div>
 
     {/* Swiper Section */}
@@ -1553,8 +1646,14 @@ function Home() {
 {/* deposite way */}
 
  <div className="newavi deposit-section container my-5 px-0">
-      <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4">
-        {/* Left Content */}
+  <div className="row">
+    <div className="col-xl-8">
+      <div className="row">
+    <div className="col-md-12">
+   <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4">
+    <div className="row align-items-center">
+      <div className="col-md-9">
+  {/* Left Content */}
         <div className="text-content text-white mb-3 mb-md-0">
           <h3 className="bonus-title">
             Get up to <span className="highlight">$100 Deposit Bonus</span>
@@ -1564,13 +1663,8 @@ function Home() {
             We accept many popular deposit methods including cryptocurrencies
             such as Bitcoin, Ethereum, Solana, USDT, and more!
           </p>
-          <button className="btn btn-light fw-semibold px-4 py-2 rounded-3">
-            Deposit Now
-          </button>
-        </div>
 
-        {/* Right Icons */}
-        <div className="payment-icons d-flex align-items-center gap-2">
+              <div className="payment-icons d-flex align-items-center gap-2 my-2">
           <img
             src="assets/img/icons/p1 (6).png"
             alt="Mastercard"
@@ -1602,7 +1696,127 @@ function Home() {
             className="icon"
           />
         </div>
+          <button className="btn btn-light fw-semibold px-4 py-2 mt-4 rounded-3">
+            Deposit Now
+          </button>
+        </div>
+
       </div>
+      <div className="col-md-3">
+        <div className="">
+         <img src="assets/img/slider/box.png" alt="" srcset="" className="w-100"/>
+      </div>
+      </div>
+    </div>
+      
+        {/* Right Icons */}
+    
+      </div>
+      </div>
+      
+      </div>
+     
+      
+    </div>
+<div className="col-xl-4">
+     {/* <img src="assets/img/slider/box.png" alt="" srcset="" className="w-100"/> */}
+    <div className="deposit-card  p-4 rounded-4 ">
+      <div className="d-flex mb-3 ">
+     <img
+                                src="assets/img/coin.png"
+                                alt="coin"
+                                srcSet=""
+                                width=""
+                              />{" "}
+        <h5 className="m-0 ms-2 d-flex align-items-center">Top Players</h5>
+      </div>
+       
+      
+    <div className="row align-items-center">
+
+      
+  <div className="col-xl-6 col-lg-6 col-md-6  px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe1')}>
+        <img src="/assets/img/spribe/aviator.png" alt="Spribe 1" />
+
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+
+    <div className="player-top-card d-flex align-items-center justify-content-between">
+      
+      {/* Left : Avatar + Info */}
+      <div className="d-flex align-items-center">
+        <img
+          src="/assets/img/icons/man.png"  // replace with real img
+          className="player-avatar"
+          alt="player"
+        />
+
+        <div className="ms-2">
+          <h6 className="player-name mb-0">Zaive</h6>
+          <p className="player-score mb-0">₹ 31046</p>
+        </div>
+      </div>
+
+      {/* Right : Crown */}
+      <i className="ri-vip-crown-fill crown-icon"></i>
+    </div>
+  </div>
+
+    {/* CARD 2 */}
+    <div className="col-xl-6 col-lg-6 col-md-6 px-1">
+      <div className="media-card" onClick={() => handleGameClick('spribe2')}>
+        <img src="assets/img/spribe/dice.png" alt="Spribe 2" />
+        
+        <button className="star-btn">
+          <i className="fa-solid fa-star"></i>
+        </button>
+
+        <div className="media-overlay">
+          <button className="play-btn">
+            <img src="assets/img/mx.png" alt="play" />
+          </button>
+        </div>
+      </div>
+
+      
+        <div className="player-top-card d-flex align-items-center justify-content-between">
+      
+      {/* Left : Avatar + Info */}
+      <div className="d-flex align-items-center">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/16683/16683451.png "  // replace with real img
+          className="player-avatar"
+          alt="player"
+        />
+
+        <div className="ms-2">
+          <h6 className="player-name mb-0">Zaive</h6>
+          <p className="player-score mb-0">₹ 31046</p>
+        </div>
+      </div>
+
+      {/* Right : Crown */}
+      <i className="ri-vip-crown-fill crown-icon"></i>
+    </div>
+    </div>
+
+  
+   
+   
+    </div>
+    </div>
+    </div>
+  </div>
+    
     </div>
 
 

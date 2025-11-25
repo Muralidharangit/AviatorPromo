@@ -537,7 +537,7 @@ swiper-slide img {
 .card.bonus_card {
   padding: 0px !important;
   border-radius: 10px;
-  border: none !important;
+  border: 1px solid #e5bf7c70;
 }
 
 .timer_block_container {
@@ -2099,7 +2099,7 @@ li.nav-item button {
 
 /* Navbar */
 .navbar {
- /* background: var(--card-bg); */
+ background: #14141d;
   transition: background 0.25s ease;
   -webkit-transition: background 0.25s ease;
   -moz-transition: background 0.25s ease;
@@ -7308,7 +7308,7 @@ background: var(--card-bg);
   background-color: #1e1e22;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid #e5bf7ca1;
+  border: 1px solid #e5bf7c70;
 }
 
 .newavi
@@ -7501,3 +7501,151 @@ blue:#34b4ff */
     border: 1px solid #00e34e;
 }
 
+/* banner */
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  max-width: 360px;
+}
+
+/* Image */
+.media-card img {
+  width: 100%;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  border: 1px solid #e5bf7c70;
+  border-radius: 6px;
+}
+
+.media-card:hover img {
+  filter: blur(4px) brightness(0.6);
+  transform: scale(1.03);
+}
+
+.media-overlay img{
+  filter:none !important;
+}
+
+/* STAR BUTTON */
+.star-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  background: transparent;
+  border-radius: 8px;
+  color: white;
+  padding: 6px;
+  border: none;
+  z-index: 5;
+}
+
+.media-card:hover .star-btn {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 99;
+  
+}
+
+/* PLAY BUTTON WRAPPER */
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Play Button Circle */
+.play-btn {
+  pointer-events: auto;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  border: none;
+}
+
+.media-card:hover .play-btn {
+  opacity: 1;
+  /* transform: scale(1); */
+}
+
+.play-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.main-ban img.w-100.rounded-2{
+  border: 1px solid #e5bf7c70 ;
+}
+
+
+nav.navbar.default-layout-navbar.col-lg-12.col-12.p-0.fixed-top.d-flex.flex-row.mobile-none {
+    border-bottom: 1px solid #7d7b7970;
+}
+
+.player-top-card {
+  background: #1c1c1c;
+  padding: 10px 14px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 330px;
+}
+
+/* Avatar Circle */
+.player-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #d4a63f;
+  object-fit: cover;
+}
+
+/* Player Name */
+.player-name {
+  color: #d0cfcf;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Golden Score */
+.player-score {
+  color: #f5d158;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(255, 200, 0, 0.6);
+}
+
+/* Crown Icon */
+.crown-icon {
+  font-size: 22px;
+  color: #f5d158;
+  filter: drop-shadow(0 0 4px rgba(255, 200, 0, 0.7));
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .player-top-card {
+    max-width: 100%;
+    padding: 12px;
+  }
+  .player-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
