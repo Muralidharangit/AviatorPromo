@@ -616,7 +616,7 @@ const SearchTopGames = () => {
         {/* Sidebar Nav Starts */}
         <Sidebar />
         {/* Sidebar Nav Ends */}
-        <div className="main-panel">
+        <div className="w-100">
           <div className="content-wrapper">
             <div className="max-1250 mx-auto">
               <div>

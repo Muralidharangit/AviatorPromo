@@ -384,7 +384,7 @@ const FilteredGamesPage = () => {
       <div className="container-fluid page-body-wrapper">
         <Sidebar />
 
-        <div className="main-panel">
+        <div className="w-100">
           <div className="content-wrapper new">
             <div className="max-1250 mx-auto">
               {/* Search Bar */}

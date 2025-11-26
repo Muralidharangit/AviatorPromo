@@ -818,7 +818,7 @@ function Home() {
         {/* Sidebar Nav Starts */}
         {/* <Sidebar /> */}
         {/* Sidebar Nav Ends */}
-        <div className="main-panel">
+        <div className="w-100">
           <div className="content-wrapper">
             <div className="mx-auto">
               <div>
@@ -1652,7 +1652,7 @@ function Home() {
     <div className="col-md-12">
    <div className="deposit-card d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4">
     <div className="row align-items-center">
-      <div className="col-md-9">
+      <div className="col-xl-8 col-lg-8">
   {/* Left Content */}
         <div className="text-content text-white mb-3 mb-md-0">
           <h3 className="bonus-title">
@@ -1702,7 +1702,7 @@ function Home() {
         </div>
 
       </div>
-      <div className="col-md-3">
+      <div className="col-xl-4 col-lg-4">
         <div className="">
          <img src="assets/img/slider/box.png" alt="" srcset="" className="w-100"/>
       </div>
@@ -1774,7 +1774,7 @@ function Home() {
     {/* CARD 2 */}
     <div className="col-xl-6 col-lg-6 col-md-6 px-1">
       <div className="media-card" onClick={() => handleGameClick('spribe2')}>
-        <img src="assets/img/spribe/dice.png" alt="Spribe 2" />
+        <img src="assets/img/spribe/keno.png" alt="Spribe 2" />
         
         <button className="star-btn">
           <i className="fa-solid fa-star"></i>
@@ -1799,7 +1799,7 @@ function Home() {
         />
 
         <div className="ms-2">
-          <h6 className="player-name mb-0">Zaive</h6>
+          <h6 className="player-name mb-0">Susi</h6>
           <p className="player-score mb-0">₹ 31046</p>
         </div>
       </div>
@@ -1817,7 +1817,7 @@ function Home() {
     </div>
   </div>
     
-    </div>
+ </div>
 
 
 
