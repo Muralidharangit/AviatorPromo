@@ -250,9 +250,9 @@ const DepositMethod = () => {
 
       <div className="container-fluid page-body-wrapper">
         {/* Sidebar */}
-        <Sidebar />
+        {/* <Sidebar /> */}
 
-        <div className="main-panel overflow-hidden">
+        <div className=" overflow-hidden w-100">
           <div className="content-wrapper">
             <div className="max-1250 mx-auto">
               <div className="h-100">
@@ -270,7 +270,7 @@ const DepositMethod = () => {
                       </div>
 
                       <h5 className="position-absolute start-50 translate-middle-x m-0 text-white fs-16 text-center">
-                        Deposit Payment Method
+                        Deposit Payment Methods
                       </h5>
                     </div>
 

@@ -88,7 +88,7 @@ function Deposit() {
         {/* Sidebar Nav Ends */}
         {/* 🔍 Search Bar */}
 
-        <div className="main-panel">
+        <div className="w-100">
           <div className="content-wrapper">
             <div className="max-1250 mx-auto">
               <div className="h-100">
